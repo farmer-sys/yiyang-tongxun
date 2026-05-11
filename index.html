@@ -79,13 +79,8 @@
         .case-item h4 { font-size: 15px; margin-top: 8px; }
         .case-item p { font-size: 13px; color: #666; margin-top: 4px; line-height: 1.7; }
 
-        .product-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .product-item { background: #fff; border-radius: var(--radius); padding: 16px; text-align: center; border: 1px solid #eef2f7; }
-        .product-item .product-ph { width: 100%; aspect-ratio: 4/3; background: var(--gray); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 32px; }
-        .product-item h4 { font-size: 13px; margin-top: 8px; color: #333; }
-        .product-item p { font-size: 11px; color: #999; margin-top: 2px; }
+        .why-item p { font-size: 11px; color: #888; margin-top: 2px; }
 
-        .why-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
         .why-item { background: #fff; border-radius: var(--radius); padding: 14px; border: 1px solid #eef2f7; text-align: center; }
         .why-item .icon { font-size: 22px; color: var(--accent); display: block; margin-bottom: 4px; }
         .why-item h4 { font-size: 12px; font-weight: 600; }
@@ -248,12 +243,32 @@
 
         <!-- 产品 -->
         <div class="section">
-            <div class="section-title"><i class="fas fa-boxes"></i> 常用设备</div>
-            <div class="product-showcase">
-                <div class="product-item"><div class="product-ph"><i class="fas fa-camera"></i></div><h4>海康威视摄像头</h4><p>200万/400万 POE</p></div>
-                <div class="product-item"><div class="product-ph"><i class="fas fa-hdd"></i></div><h4>硬盘录像机 NVR</h4><p>4-16路 远程查看</p></div>
-                <div class="product-item"><div class="product-ph"><i class="fas fa-wifi"></i></div><h4>无线AP/路由器</h4><p>全屋WiFi 千兆</p></div>
-                <div class="product-item"><div class="product-ph"><i class="fas fa-plug"></i></div><h4>POE交换机</h4><p>5-16口 稳定供电</p></div>
+            <div class="section-title"><i class="fas fa-boxes"></i> 合作品牌</div>
+            <div class="card">
+                <p style="font-size:13px;color:#666;margin-bottom:12px;text-align:center;">我们采用一线品牌设备，品质有保障</p>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;">
+                    <div style="text-align:center;padding:14px 8px;background:#f8f9fb;border-radius:10px;">
+                        <div style="font-size:32px;color:#0055aa;margin-bottom:4px;"><i class="fas fa-video"></i></div>
+                        <div style="font-size:13px;font-weight:600;">海康威视</div>
+                        <div style="font-size:11px;color:#999;">HIKVISION</div>
+                    </div>
+                    <div style="text-align:center;padding:14px 8px;background:#f8f9fb;border-radius:10px;">
+                        <div style="font-size:32px;color:#e74c3c;margin-bottom:4px;"><i class="fas fa-video"></i></div>
+                        <div style="font-size:13px;font-weight:600;">大华</div>
+                        <div style="font-size:11px;color:#999;">DAHUA</div>
+                    </div>
+                    <div style="text-align:center;padding:14px 8px;background:#f8f9fb;border-radius:10px;">
+                        <div style="font-size:32px;color:#e67e22;margin-bottom:4px;"><i class="fas fa-wifi"></i></div>
+                        <div style="font-size:13px;font-weight:600;">锐捷</div>
+                        <div style="font-size:11px;color:#999;">Ruijie</div>
+                    </div>
+                    <div style="text-align:center;padding:14px 8px;background:#f8f9fb;border-radius:10px;">
+                        <div style="font-size:32px;color:#1a73e8;margin-bottom:4px;"><i class="fas fa-microchip"></i></div>
+                        <div style="font-size:13px;font-weight:600;">华为</div>
+                        <div style="font-size:11px;color:#999;">HUAWEI</div>
+                    </div>
+                </div>
+                <p style="font-size:11px;color:#bbb;text-align:center;margin-top:10px;">注：品牌Logo仅用于展示，版权归各品牌所有</p>
             </div>
         </div>
 
