@@ -7,78 +7,89 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#fff;color:#1a2332;line-height:1.6;-webkit-font-smoothing:antialiased}
+        body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#f0f4f8;color:#1a2332;line-height:1.6;-webkit-font-smoothing:antialiased}
         a{text-decoration:none;color:inherit}
         .container{max-width:1100px;margin:0 auto;padding:0 16px}
 
-        .hero{background:#fff;padding:60px 16px 40px;text-align:center}
-        .hero .logo{font-size:28px;font-weight:900;color:#004b99;letter-spacing:2px}
-        .hero .logo span{color:#e67e22}
-        .hero .slogan{font-size:15px;color:#555;margin-top:8px;letter-spacing:1px}
-        .hero .hl{display:inline-block;background:#004b99;color:#fff;padding:14px 28px;border-radius:12px;font-size:18px;font-weight:700;margin-top:20px;letter-spacing:1px;line-height:1.5}
-        .hero .sub{padding:12px 20px;background:#f8fafc;border-radius:12px;margin-top:16px;font-size:14px;color:#666;line-height:1.8}
-        .hero .sub i{color:#004b99;margin-right:4px}
-        .hero .phone{font-size:22px;font-weight:800;color:#004b99;margin-top:16px;letter-spacing:1px}
-        .hero .phone a{color:#004b99}
+        /* ===== Logo ===== */
+        .logo-wrap{text-align:center;padding:32px 16px 0;background:linear-gradient(180deg,#003366 0%,#004b99 40%,#e8f2ff 100%)}
+        .logo-main{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:16px 32px;border-radius:20px;margin-bottom:20px}
+        .logo-main .icon-wrap{width:52px;height:52px;background:linear-gradient(135deg,#e67e22,#f39c12);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 4px 12px rgba(230,126,34,.3)}
+        .logo-main .text{text-align:left}
+        .logo-main .text .name{font-size:26px;font-weight:900;color:#fff;letter-spacing:3px}
+        .logo-main .text .name span{color:#f39c12}
+        .logo-main .text .sub{font-size:12px;color:rgba(255,255,255,.7);letter-spacing:2px;margin-top:2px}
+        .logo-main .text .sub i{color:#f39c12;margin-right:3px;font-size:10px}
+
+        .hero{background:linear-gradient(180deg,#003366 0%,#004b99 40%,#e8f2ff 100%);text-align:center;padding:0 16px 40px}
+        .hero .hl{display:inline-flex;gap:6px;flex-wrap:wrap;justify-content:center;background:#fff;color:#003366;padding:12px 24px;border-radius:12px;font-size:17px;font-weight:700;margin-top:4px;box-shadow:0 4px 20px rgba(0,51,102,.15)}
+        .hero .hl span{background:#e8f2ff;padding:2px 10px;border-radius:6px;font-size:15px}
+        .hero .sub{padding:14px 20px;background:#fff;border-radius:12px;margin-top:16px;font-size:14px;color:#555;line-height:1.9;box-shadow:0 2px 12px rgba(0,0,0,.06);text-align:left;max-width:400px;margin-left:auto;margin-right:auto}
+        .hero .sub i{color:#004b99;margin-right:6px}
+        .hero .sub strong{color:#003366}
+        .hero .phone{font-size:26px;font-weight:900;color:#fff;margin-top:16px;letter-spacing:2px;text-shadow:0 2px 8px rgba(0,0,0,.15)}
+        .hero .phone a{color:#fff}
         .hero .btns{display:flex;gap:10px;justify-content:center;margin-top:16px}
-        .hero .btn{padding:12px 28px;border-radius:10px;font-size:14px;font-weight:600;flex:1;max-width:200px}
-        .hero .btn-primary{background:#004b99;color:#fff}
-        .hero .btn-secondary{background:#f0f4f8;color:#004b99}
+        .hero .btn{padding:14px 32px;border-radius:12px;font-size:15px;font-weight:700;flex:1;max-width:200px;transition:all .2s}
+        .hero .btn:active{transform:scale(.96)}
+        .hero .btn-primary{background:#e67e22;color:#fff;box-shadow:0 4px 15px rgba(230,126,34,.35)}
+        .hero .btn-secondary{background:#fff;color:#003366;box-shadow:0 2px 10px rgba(0,0,0,.08)}
 
-        .section{padding:32px 0;border-bottom:8px solid #f5f7fa}
-        .section:last-child{border-bottom:none}
-        .section-title{font-size:16px;font-weight:700;color:#004b99;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-        .section-title::after{content:'';flex:1;height:2px;background:#e8f2ff}
+        .section{padding:32px 0}
+        .section:nth-child(odd){background:#fff;border-radius:20px;margin:8px 0;padding:32px 16px}
+        .section-title{font-size:16px;font-weight:700;color:#003366;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+        .section-title::after{content:'';flex:1;height:2px;background:linear-gradient(90deg,#003366,transparent)}
+        .section-title i{color:#e67e22}
 
-        /* ===== 方块式服务项目 ===== */
         .service-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
-        .service-block{padding:20px 14px;background:#f8fafc;border-radius:14px;text-align:center;display:block;transition:all .2s}
-        .service-block:active{transform:scale(.96);background:#eef2f7}
+        .service-block{padding:20px 14px;background:#f2f6fc;border-radius:14px;text-align:center;display:block;transition:all .2s;border:1px solid transparent}
+        .service-block:active{transform:scale(.96);background:#e6eef9;border-color:#004b99}
         .service-block .icon{font-size:28px;color:#004b99;display:block;margin-bottom:6px}
         .service-block h3{font-size:14px;font-weight:700;color:#1a2332;margin-bottom:2px}
-        .service-block p{font-size:12px;color:#999}
+        .service-block p{font-size:12px;color:#888}
 
-        .project-card{padding:16px;background:linear-gradient(135deg,#002d5a,#004b99);color:#fff;border-radius:14px;margin-bottom:10px}
+        .project-card{padding:18px;background:linear-gradient(135deg,#002d5a,#004b99);color:#fff;border-radius:14px;margin-bottom:10px}
         .project-card .proj-title{font-size:15px;font-weight:700}
         .project-card .proj-desc{font-size:13px;opacity:.85;margin-top:4px;line-height:1.6}
         .project-card .proj-stats{display:flex;gap:16px;margin-top:10px;flex-wrap:wrap}
         .project-card .proj-stats span{font-size:12px;opacity:.8}
         .project-card .proj-stats strong{font-size:15px}
-        .project-card-light{background:#f8fafc;color:#1a2332}
+        .project-card-light{background:#f2f6fc;color:#1a2332}
 
         .tag{display:inline-block;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600}
         .tag-orange{background:#fef3e0;color:#e67e22}
-        .tag-blue{background:#e8f2ff;color:#004b99}
+        .tag-blue{background:#e3edf7;color:#004b99}
 
         .brand-row{display:flex;gap:8px}
-        .brand-row .brand-item{flex:1;text-align:center;padding:12px 6px;background:#f8fafc;border-radius:10px;font-size:12px;font-weight:600}
-        .brand-row .brand-item .icon{font-size:20px;display:block;margin-bottom:4px}
+        .brand-row .brand-item{flex:1;text-align:center;padding:14px 6px 12px;background:#f2f6fc;border-radius:12px;font-size:12px;font-weight:600}
+        .brand-row .brand-item .icon{font-size:22px;display:block;margin-bottom:4px}
         .brand-link{display:block;text-align:center;margin-top:10px;font-size:13px;color:#004b99;font-weight:600}
 
         .why-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-        .why-item{text-align:center;padding:14px 8px;background:#f8fafc;border-radius:10px}
-        .why-item .icon{font-size:20px;color:#e67e22;display:block;margin-bottom:4px}
+        .why-item{text-align:center;padding:16px 8px;background:#f2f6fc;border-radius:12px;border:1px solid #e8edf4}
+        .why-item .icon{font-size:22px;color:#e67e22;display:block;margin-bottom:4px}
         .why-item h4{font-size:13px;font-weight:600}
         .why-item p{font-size:11px;color:#888;margin-top:2px}
 
         .process-bar{display:flex;gap:4px}
-        .process-bar .step{flex:1;text-align:center;padding:10px 4px;background:#f8fafc;border-radius:8px}
-        .process-bar .step .num{width:24px;height:24px;background:#004b99;color:#fff;border-radius:50%;line-height:24px;font-size:11px;font-weight:700;margin:0 auto 4px}
+        .process-bar .step{flex:1;text-align:center;padding:10px 4px;background:#f2f6fc;border-radius:10px;border:1px solid #e8edf4}
+        .process-bar .step .num{width:26px;height:26px;background:linear-gradient(135deg,#003366,#004b99);color:#fff;border-radius:50%;line-height:26px;font-size:12px;font-weight:700;margin:0 auto 4px}
         .process-bar .step h4{font-size:11px;font-weight:600}
         .process-bar .step p{font-size:10px;color:#999}
 
         .form-group{margin-bottom:12px}
-        .form-group label{display:block;font-size:13px;font-weight:600;margin-bottom:4px}
+        .form-group label{display:block;font-size:13px;font-weight:600;margin-bottom:4px;color:#1a2332}
         .form-group label .required{color:#e74c3c}
-        .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;font-size:15px;border:1.5px solid #dce3ec;border-radius:10px;outline:none;font-family:inherit;-webkit-appearance:none}
-        .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#004b99}
+        .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;font-size:15px;border:1.5px solid #dce3ec;border-radius:10px;outline:none;font-family:inherit;-webkit-appearance:none;background:#f8fafc;transition:border-color .2s}
+        .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#004b99;background:#fff}
         .form-group textarea{min-height:70px;resize:vertical}
-        .form-group select{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat right 14px center;padding-right:36px}
-        .submit-btn{width:100%;padding:14px;font-size:16px;font-weight:700;color:#fff;background:#004b99;border:none;border-radius:12px;cursor:pointer}
+        .form-group select{background:#f8fafc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat right 14px center;padding-right:36px}
+        .submit-btn{width:100%;padding:14px;font-size:16px;font-weight:700;color:#fff;background:linear-gradient(135deg,#003366,#004b99);border:none;border-radius:12px;cursor:pointer;transition:all .2s}
+        .submit-btn:active{transform:scale(.98);opacity:.9}
 
-        .footer{background:#1a2332;color:#b0bccd;padding:24px 16px;text-align:center;font-size:12px;line-height:2}
-        .footer a{color:#b0bccd}
-        .footer .copy{margin-top:12px;padding-top:12px;border-top:1px solid #2a3444;color:#7a879a;font-size:11px}
+        .footer{background:#002244;color:#8aa0bc;padding:28px 16px;text-align:center;font-size:12px;line-height:2}
+        .footer a{color:#8aa0bc}
+        .footer .copy{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);color:#5a7494;font-size:11px}
 
         .modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:999;align-items:center;justify-content:center;padding:20px}
         .modal-overlay.active{display:flex}
@@ -87,36 +98,47 @@
         .modal-box .icon{font-size:48px;color:#27ae60;display:block;margin-bottom:12px}
         .modal-box h3{font-size:18px;margin-bottom:8px}
         .modal-box p{font-size:14px;color:#666;margin-bottom:20px;line-height:1.7}
-        .modal-box .btn-ok{padding:10px 40px;font-size:15px;font-weight:600;color:#fff;background:#004b99;border:none;border-radius:10px;cursor:pointer}
+        .modal-box .btn-ok{padding:10px 40px;font-size:15px;font-weight:600;color:#fff;background:linear-gradient(135deg,#003366,#004b99);border:none;border-radius:10px;cursor:pointer}
         .toast{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.78);color:#fff;padding:14px 28px;border-radius:10px;font-size:15px;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none}
         .toast.show{opacity:1}
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <div class="logo">怡阳<span>通讯</span></div>
-        <div class="slogan">赣州 · 弱电智能化工程服务</div>
-        <div class="hl">安防监控 · 网络全光 · 客控声光</div>
-        <div class="sub">
-            <i class="fas fa-check-circle"></i> 瑞金天沐温泉酒店弱电总包<br>
-            <i class="fas fa-check-circle"></i> 赣南医科大学智慧消防施工
+    <div class="logo-wrap">
+        <div class="logo-main">
+            <div class="icon-wrap"><i class="fas fa-bolt"></i></div>
+            <div class="text">
+                <div class="name">怡阳<span>通讯</span></div>
+                <div class="sub"><i class="fas fa-circle"></i> 弱电智能化 · 工程服务商</div>
+            </div>
         </div>
-        <div class="phone"><a href="tel:18107070735">18107070735</a></div>
-        <div class="btns">
-            <a href="tel:18107070735" class="btn btn-primary"><i class="fas fa-phone-alt"></i> 立即拨打</a>
-            <a href="#booking" class="btn btn-secondary"><i class="fas fa-calendar-check"></i> 预约勘测</a>
+        <div class="hero">
+            <div class="hl">
+                <span>安防监控</span>
+                <span>网络全光</span>
+                <span>客控声光</span>
+            </div>
+            <div class="sub">
+                <i class="fas fa-check-circle"></i> <strong>瑞金天沐温泉酒店</strong> 弱电总包<br>
+                <i class="fas fa-check-circle"></i> <strong>赣南医科大学</strong> 智慧消防施工
+            </div>
+            <div class="phone"><a href="tel:18107070735">18107070735</a></div>
+            <div class="btns">
+                <a href="tel:18107070735" class="btn btn-primary"><i class="fas fa-phone-alt"></i> 立即拨打</a>
+                <a href="#booking" class="btn btn-secondary"><i class="fas fa-calendar-check"></i> 预约勘测</a>
+            </div>
         </div>
     </div>
 
     <div class="container">
         <div class="section">
-            <div class="section-title"><i class="fas fa-concierge-bell"></i> 服务项目</div>
+            <div class="section-title"><i class="fas fa-cubes"></i> 服务项目</div>
             <div class="service-grid">
                 <a href="./service.html?goto=anjian" class="service-block">
                     <div class="icon"><i class="fas fa-video"></i></div>
                     <h3>安防监控</h3>
-                    <p>海康大华 · POE · 远程</p>
+                    <p>海康大华 · POE</p>
                 </a>
                 <a href="./service.html?goto=wangluo" class="service-block">
                     <div class="icon"><i class="fas fa-wifi"></i></div>
@@ -159,7 +181,7 @@
         <div class="section">
             <div class="section-title"><i class="fas fa-trophy"></i> 重点项目</div>
             <div class="project-card">
-                <div class="proj-title"><span class="tag tag-orange" style="font-size:11px;margin-right:6px;">弱电总包</span> 瑞金天沐温泉酒店</div>
+                <div class="proj-title"><span class="tag tag-orange" style="margin-right:6px;">弱电总包</span> 瑞金天沐温泉酒店</div>
                 <div class="proj-desc">全智能化弱电建设 · 300路监控 · 100+AP · 270间客控 · 1000㎡宴会厅声光 · 华为全光</div>
                 <div class="proj-stats">
                     <span><strong>300</strong>路监控</span>
@@ -169,18 +191,18 @@
                 </div>
             </div>
             <div class="project-card project-card-light">
-                <div class="proj-title"><span class="tag tag-blue" style="font-size:11px;margin-right:6px;">智慧消防</span> 赣南医科大学</div>
-                <div class="proj-desc">智慧消防系统施工 · 报警联动 · 视频联动 · 智慧消防云平台</div>
+                <div class="proj-title"><span class="tag tag-blue" style="margin-right:6px;">智慧消防</span> 赣南医科大学</div>
+                <div class="proj-desc">智慧消防系统施工 · 报警联动 · 智慧消防云平台</div>
             </div>
         </div>
 
         <div class="section">
-            <div class="section-title"><i class="fas fa-boxes"></i> 合作品牌</div>
+            <div class="section-title"><i class="fas fa-handshake"></i> 合作品牌</div>
             <div class="brand-row">
                 <div class="brand-item"><div class="icon" style="color:#0055aa;"><i class="fas fa-video"></i></div>海康威视</div>
                 <div class="brand-item"><div class="icon" style="color:#e74c3c;"><i class="fas fa-video"></i></div>大华</div>
                 <div class="brand-item"><div class="icon" style="color:#e67e22;"><i class="fas fa-wifi"></i></div>锐捷</div>
-                <div class="brand-item"><div class="icon" style="color:#1a73e8;"><i class="fas fa-microchip"></i></div>华为</div>
+                <div class="brand-item"><div class="icon" style="color:#1a73e8;"><i class="fas fa-server"></i></div>华为</div>
             </div>
             <a href="./products.html" class="brand-link"><i class="fas fa-arrow-right"></i> 查看产品型号参数</a>
         </div>
@@ -190,7 +212,7 @@
             <div class="why-row">
                 <div class="why-item"><span class="icon"><i class="fas fa-user-tie"></i></span><h4>专业团队</h4><p>经验丰富</p></div>
                 <div class="why-item"><span class="icon"><i class="fas fa-tag"></i></span><h4>价格透明</h4><p>明码实价</p></div>
-                <div class="why-item"><span class="icon"><i class="fas fa-shield"></i></span><h4>正品保障</h4><p>品牌授权</p></div>
+                <div class="why-item"><span class="icon"><i class="fas fa-shield-alt"></i></span><h4>正品保障</h4><p>品牌授权</p></div>
             </div>
         </div>
 
@@ -208,9 +230,9 @@
 
         <div class="section">
             <div class="section-title"><i class="fas fa-phone-alt"></i> 联系我们</div>
-            <div style="background:linear-gradient(135deg,#002d5a,#004b99);border-radius:14px;padding:20px;text-align:center;color:#fff;">
-                <div style="font-size:24px;font-weight:800;letter-spacing:1px;margin:6px 0;"><a href="tel:18107070735" style="color:#fff;">18107070735</a></div>
-                <div style="font-size:13px;opacity:.8;line-height:1.8;">
+            <div style="background:linear-gradient(135deg,#003366,#004b99);border-radius:16px;padding:24px 20px;text-align:center;color:#fff;">
+                <div style="font-size:24px;font-weight:900;letter-spacing:1px;margin:6px 0;"><a href="tel:18107070735" style="color:#fff;">18107070735</a></div>
+                <div style="font-size:13px;opacity:.8;line-height:2;">
                     <i class="fas fa-map-marker-alt"></i> 赣州经济技术开发区和信广场D栋<br>
                     <i class="fas fa-clock"></i> 周一至周日 8:00-18:00
                 </div>
@@ -252,7 +274,7 @@
         const form=document.getElementById('bookingForm'),modal=document.getElementById('successModal');
         function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
         function closeModal(){modal.classList.remove('active')}
-        form.addEventListener('submit',async function(e){e.preventDefault();const n=form.name.value.trim(),p=form.phone.value.trim();if(!n){showToast('请输入姓名');form.name.focus();return}if(!p||!/1\d{10}/.test(p)){showToast('请输入正确手机号');form.phone.focus();return}const btn=form.querySelector('.submit-btn');btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> 提交中...';try{const r=await fetch('https://formspree.io/f/xjkyqwjw',{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(r.ok){modal.classList.add('active');form.reset()}else showToast('提交失败，请致电 18107070735')}catch(e){showToast('网络异常，请致电 18107070735')}btn.disabled=false;btn.innerHTML='<i class="fas fa-paper-plane"></i> 提交预约'});
+        form.addEventListener('submit',async function(e){e.preventDefault();const n=form.name.value.trim(),p=form.phone.value.trim();if(!n){showToast('请输入姓名');form.name.focus();return}if(!p||!/1d{10}/.test(p)){showToast('请输入正确手机号');form.phone.focus();return}const btn=form.querySelector('.submit-btn');btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> 提交中...';try{const r=await fetch('https://formspree.io/f/xjkyqwjw',{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(r.ok){modal.classList.add('active');form.reset()}else showToast('提交失败，请致电 18107070735')}catch(e){showToast('网络异常，请致电 18107070735')}btn.disabled=false;btn.innerHTML='<i class="fas fa-paper-plane"></i> 提交预约'});
         modal.addEventListener('click',function(e){if(e.target===modal)closeModal()});
     </script>
 </body>
