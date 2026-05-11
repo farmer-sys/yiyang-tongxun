@@ -45,7 +45,7 @@
         <h1>服务项目详情</h1>
     </div>
     <div class="container">
-        <details class="service-card" open id="anjian">
+        <details class="service-card" id="anjian">
             <summary>
                 <div class="icon-box"><i class="fas fa-video"></i></div>
                 <div class="info"><h3>安防监控系统</h3><p>高清摄像头 · POE供电 · 远程查看</p></div>
@@ -282,14 +282,7 @@
         <a href="tel:18107070735" class="btn btn-call"><i class="fas fa-phone-alt"></i> 立即拨打</a>
         <a href="./" class="btn btn-book"><i class="fas fa-calendar-check"></i> 在线预约</a>
     </div>
-<script>
-(function(){
-  var h = window.location.hash;
-  if (h) {
-    var el = document.querySelector(h);
-    if (el) el.setAttribute("open", "");
-  }
-})()
-</script>
+
+<script>!function(){var h=window.location.hash;if(h){var e=document.querySelector(h);e&&(e.setAttribute("open",""),e.scrollIntoView({behavior:"smooth",block:"start"}))}}()</script>
 </body>
 </html>
