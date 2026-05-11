@@ -14,10 +14,7 @@
         /* ===== Logo ===== */
         .logo-wrap{text-align:center;padding:32px 16px 0;background:linear-gradient(180deg,#003366 0%,#004b99 40%,#e8f2ff 100%)}
         .logo-main{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:16px 32px;border-radius:20px;margin-bottom:20px}
-        .logo-main .logo-icon{width:64px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:2px;flex-shrink:0;position:relative;overflow:hidden}
-        .logo-main .logo-icon .yi{font-size:28px;font-weight:900;color:#fff;letter-spacing:-1px}
-        .logo-main .logo-icon .yang{font-size:28px;font-weight:900;color:#f39c12;letter-spacing:-1px}
-        .logo-main .logo-icon .logo-line{position:absolute;bottom:0;left:4px;right:4px;height:3px;background:linear-gradient(90deg,#f39c12,#e67e22);border-radius:2px}
+        .logo-main .logo-icon{width:58px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#f0f4f8;border:1px solid #e0e7ef}
         .logo-main .text{text-align:left}
         .logo-main .text .name{font-size:26px;font-weight:900;color:#fff;letter-spacing:3px}
         .logo-main .text .name span{color:#f39c12}
@@ -111,11 +108,24 @@
     <div class="logo-wrap">
         <div class="logo-main">
             <div class="logo-icon">
-                <span class="yi">怡</span><span class="yang">阳</span>
-                <div class="logo-line"></div>
+                <svg viewBox="0 0 48 48" width="48" height="48">
+                    <defs>
+                        <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#e74c3c;stop-opacity:1"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="0" y="0" width="48" height="48" rx="12" fill="url(#lg)" opacity="0.12"/>
+                    <polygon points="24,8 30,22 24,18 18,22" fill="#f39c12"/>
+                    <polygon points="24,8 30,22 24,18 18,22" fill="#f39c12" opacity="0.5" transform="translate(0,12)"/>
+                    <circle cx="24" cy="12" r="5" fill="#fff" opacity="0.95"/>
+                    <circle cx="17" cy="28" r="4" fill="#f39c12" opacity="0.3"/>
+                    <circle cx="31" cy="28" r="4" fill="#f39c12" opacity="0.3"/>
+                    <circle cx="24" cy="36" r="6" fill="#f39c12" opacity="0.15"/>
+                </svg>
             </div>
             <div class="text">
-                <div class="name">怡阳<span>通讯</span></div>
+                <div class="name">怡阳通讯</div>
                 <div class="sub"><i class="fas fa-circle"></i> 弱电智能化 · 工程服务商</div>
             </div>
         </div>
