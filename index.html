@@ -104,7 +104,130 @@
 </head>
 <body>
 
-    <div class="logo-wrap">
+    <!-- LOGO PREVIEW GALLERY -->
+<div style="background:linear-gradient(180deg,#003366 0%,#004b99 40%,#e8f2ff 100%);padding:24px 16px 0;text-align:center">
+    <div style="color:rgba(255,255,255,.5);font-size:13px;letter-spacing:3px;margin-bottom:16px">— LOGO方案预览 —</div>
+    <div id="logoGallery" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:16px">
+
+        <!-- 方案A：双Y叠放 -->
+        <div class="logo-option" onclick="selectLogo(0)">
+            <svg viewBox="0 0 60 60" width="46" height="46">
+                <circle cx="30" cy="30" r="28" fill="none" stroke="#f39c12" stroke-width="2"/>
+                <circle cx="30" cy="30" r="18" fill="#003366" opacity="0.4"/>
+                <text x="12" y="42" font-family="Arial Black,Arial,sans-serif" font-size="30" font-weight="900" fill="#f39c12" font-style="italic" letter-spacing="-2">yy</text>
+            </svg>
+            <div style="font-size:11px;color:rgba(255,255,255,.6);margin-top:6px;letter-spacing:1px">方案A</div>
+        </div>
+
+        <!-- 方案B：Y形信号塔 -->
+        <div class="logo-option" onclick="selectLogo(1)">
+            <svg viewBox="0 0 60 60" width="46" height="46">
+                <circle cx="30" cy="30" r="28" fill="#002d5a" stroke="none"/>
+                <circle cx="30" cy="30" r="26" fill="none" stroke="#f39c12" stroke-width="1.5" opacity="0.4"/>
+                <path d="M30,8 L22,28 L22,46" stroke="#f39c12" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M30,8 L38,28 L38,46" stroke="#f39c12" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16,28 Q23,20 30,28 Q37,20 44,28" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.25"/>
+            </svg>
+            <div style="font-size:11px;color:rgba(255,255,255,.6);margin-top:6px;letter-spacing:1px">方案B</div>
+        </div>
+
+        <!-- 方案C：菱形Y -->
+        <div class="logo-option" onclick="selectLogo(2)">
+            <svg viewBox="0 0 60 60" width="46" height="46">
+                <circle cx="30" cy="30" r="28" fill="none" stroke="#f39c12" stroke-width="2.5"/>
+                <polygon points="30,10 50,30 30,50 10,30" fill="#f39c12" opacity="0.08"/>
+                <polygon points="30,14 46,30 30,46 14,30" fill="none" stroke="#f39c12" stroke-width="1" opacity="0.3"/>
+                <path d="M18,28 L24,34" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+                <path d="M30,20 L36,34" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+                <text x="27" y="40" font-family="Arial Black,Arial,sans-serif" font-size="22" font-weight="900" fill="#f39c12" font-style="italic">Y</text>
+            </svg>
+            <div style="font-size:11px;color:rgba(255,255,255,.6);margin-top:6px;letter-spacing:1px">方案C</div>
+        </div>
+
+        <!-- 方案D：简约YY箭头 -->
+        <div class="logo-option" onclick="selectLogo(3)">
+            <svg viewBox="0 0 60 60" width="46" height="46">
+                <circle cx="30" cy="30" r="28" fill="none" stroke="#f39c12" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="30" cy="30" r="22" fill="none" stroke="#f39c12" stroke-width="3"/>
+                <text x="13" y="42" font-family="Georgia,serif" font-size="30" font-weight="700" fill="#f39c12" font-style="italic" letter-spacing="-1">yy</text>
+            </svg>
+            <div style="font-size:11px;color:rgba(255,255,255,.6);margin-top:6px;letter-spacing:1px">方案D</div>
+        </div>
+
+        <!-- 方案E：科技折线Y -->
+        <div class="logo-option" onclick="selectLogo(4)">
+            <svg viewBox="0 0 60 60" width="46" height="46">
+                <circle cx="30" cy="30" r="29" fill="#002d5a"/>
+                <path d="M12,12 L30,30 L48,12" stroke="#f39c12" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M30,30 L30,50" stroke="#f39c12" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M16,16 L22,22" stroke="#fff" stroke-width="1" fill="none" opacity="0.2"/>
+                <path d="M38,16 L44,22" stroke="#fff" stroke-width="1" fill="none" opacity="0.2"/>
+                <circle cx="30" cy="20" r="3" fill="#f39c12" opacity="0.15"/>
+            </svg>
+            <div style="font-size:11px;color:rgba(255,255,255,.6);margin-top:6px;letter-spacing:1px">方案E</div>
+        </div>
+
+    </div>
+    <div style="margin-bottom:16px">
+        <span id="selectedLabel" style="font-size:13px;color:#f39c12;font-weight:600;letter-spacing:2px;">点击上方方案选中 ↕</span>
+    </div>
+    <button onclick="applyLogo()" style="background:#f39c12;border:none;color:#fff;padding:10px 32px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;margin-bottom:20px">✓ 应用选中方案</button>
+</div>
+
+<script>
+var selectedIdx = -1;
+var logoOptions = [
+    '<svg viewBox="0 0 60 60" width="50" height="50"><circle cx="30" cy="30" r="28" fill="none" stroke="#f39c12" stroke-width="2"/><circle cx="30" cy="30" r="18" fill="#003366" opacity="0.4"/><text x="12" y="42" font-family="\"Arial Black\",Arial,sans-serif" font-size="30" font-weight="900" fill="#f39c12" font-style="italic" letter-spacing="-2">yy</text></svg>',
+    
+    '<svg viewBox="0 0 60 60" width="50" height="50"><circle cx="30" cy="30" r="28" fill="#002d5a"/><circle cx="30" cy="30" r="26" fill="none" stroke="#f39c12" stroke-width="1.5" opacity="0.4"/><path d="M30,8 L22,28 L22,46" stroke="#f39c12" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M30,8 L38,28 L38,46" stroke="#f39c12" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16,28 Q23,20 30,28 Q37,20 44,28" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.25"/></svg>',
+    
+    '<svg viewBox="0 0 60 60" width="50" height="50"><circle cx="30" cy="30" r="28" fill="none" stroke="#f39c12" stroke-width="2.5"/><polygon points="30,10 50,30 30,50 10,30" fill="#f39c12" opacity="0.08"/><polygon points="30,14 46,30 30,46 14,30" fill="none" stroke="#f39c12" stroke-width="1" opacity="0.3"/><path d="M18,28 L24,34" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/><path d="M30,20 L36,34" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/><text x="27" y="40" font-family="\"Arial Black\",Arial,sans-serif" font-size="22" font-weight="900" fill="#f39c12" font-style="italic">Y</text></svg>',
+    
+    '<svg viewBox="0 0 60 60" width="50" height="50"><circle cx="30" cy="30" r="28" fill="none" stroke="#f39c12" stroke-width="1.5" opacity="0.5"/><circle cx="30" cy="30" r="22" fill="none" stroke="#f39c12" stroke-width="3"/><text x="13" y="42" font-family="Georgia,serif" font-size="30" font-weight="700" fill="#f39c12" font-style="italic" letter-spacing="-1">yy</text></svg>',
+    
+    '<svg viewBox="0 0 60 60" width="50" height="50"><circle cx="30" cy="30" r="29" fill="#002d5a"/><path d="M12,12 L30,30 L48,12" stroke="#f39c12" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M30,30 L30,50" stroke="#f39c12" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M16,16 L22,22" stroke="#fff" stroke-width="1" fill="none" opacity="0.2"/><path d="M38,16 L44,22" stroke="#fff" stroke-width="1" fill="none" opacity="0.2"/><circle cx="30" cy="20" r="3" fill="#f39c12" opacity="0.15"/></svg>'
+];
+
+function selectLogo(i){
+    selectedIdx=i;
+    document.querySelectorAll('.logo-option').forEach((el,idx)=>{
+        el.style.border=idx===i?'2px solid #f39c12':'2px solid transparent';
+        el.style.borderRadius='14px';
+        el.style.padding='8px';
+    });
+    document.getElementById('selectedLabel').textContent='已选：方案' + 'ABCDE'[i];
+}
+function applyLogo(){
+    if(selectedIdx<0){alert('请先点击选择一个方案');return}
+    var svg = logoOptions[selectedIdx];
+    var circle = document.querySelector('.logo-icon-circle svg');
+    if(circle) circle.outerHTML = svg;
+    document.getElementById('logoGallery').style.display='none';
+    document.querySelector('.logo-gallery-title').style.display='none';
+    document.querySelector('.logo-gallery-btn').style.display='none';
+    document.getElementById('selectedLabel').textContent='✓ 已应用方案' + 'ABCDE'[selectedIdx] + '，可刷新页面重新选择';
+}
+</script>
+
+<style>
+.logo-option{
+    background:rgba(255,255,255,.06);
+    border:2px solid transparent;
+    border-radius:12px;
+    padding:8px;
+    cursor:pointer;
+    transition:all .2s;
+    width:80px;
+    text-align:center
+}
+.logo-option:hover{
+    background:rgba(255,255,255,.1);
+    border-color:rgba(243,156,18,.4)
+}
+.logo-option:active{transform:scale(.95)}
+</style>
+
+<div class="logo-wrap">
         <div class="logo-row">
             <div class="logo-icon-circle">
                 <svg viewBox="0 0 60 60" width="50" height="50">
