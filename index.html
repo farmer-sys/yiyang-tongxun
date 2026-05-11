@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>怡阳通讯 - 弱电智能化服务预约</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ========== Reset & Base ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: #0066cc; text-decoration: none; }
+
+        /* ========== Header ========== */
+        .header {
+            background: linear-gradient(135deg, #004b99 0%, #0066cc 50%, #0088ee 100%);
+            color: #fff;
+            text-align: center;
+            padding: 32px 20px 28px;
+        }
+        .header h1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+        .header .slogan {
+            font-size: 14px;
+            opacity: 0.92;
+            margin-top: 6px;
+            letter-spacing: 2px;
+        }
+        .header .slogan i {
+            margin: 0 4px;
+        }
+
+        /* ========== Container ========== */
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        /* ========== Section Title ========== */
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #004b99;
+            padding: 12px 0 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title i {
+            font-size: 18px;
+        }
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #0066cc 0%, transparent 100%);
+            margin-left: 8px;
+        }
+
+        /* ========== Cards ========== */
+        .card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        /* ========== Service Grid ========== */
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .service-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px 14px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 102, 204, 0.08);
+            border: 1px solid #eaf0f6;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-item:active {
+            transform: scale(0.96);
+        }
+        .service-item .icon {
+            font-size: 32px;
+            color: #0066cc;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .service-item h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 4px;
+        }
+        .service-item p {
+            font-size: 12px;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        /* ========== Price Table ========== */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .price-table th,
+        .price-table td {
+            padding: 10px 8px;
+            text-align: left;
+            border-bottom: 1px solid #eef2f7;
+        }
+        .price-table th {
+            font-weight: 600;
+            color: #0066cc;
+            background: #f6f9fe;
+            font-size: 13px;
+        }
+        .price-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+            color: #e74c3c;
+            white-space: nowrap;
+        }
+        .price-note {
+            font-size: 12px;
+            color: #999;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: #fafbfc;
+            border-radius: 8px;
+            border-left: 3px solid #0066cc;
+        }
+        .price-note i {
+            margin-right: 4px;
+        }
+
+        /* ========== Form ========== */
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 6px;
+        }
+        .form-group label .required {
+            color: #e74c3c;
+            margin-left: 2px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            font-size: 15px;
+            border: 1.5px solid #dce3ec;
+            border-radius: 10px;
+            outline: none;
+            background: #fff;
+            transition: border-color 0.2s;
+            font-family: inherit;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #0066cc;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.12);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .form-group select {
+            background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat right 14px center;
+            padding-right: 36px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            font-size: 17px;
+            font-weight: 700;
+            color: #fff;
+            background: linear-gradient(135deg, #004b99, #0066cc);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+            letter-spacing: 2px;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .submit-btn:active {
+            transform: scale(0.97);
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+        }
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* ========== Modal ========== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px 24px 24px;
+            max-width: 340px;
+            width: 100%;
+            text-align: center;
+            animation: modalIn 0.25s ease;
+        }
+        @keyframes modalIn {
+            from { transform: scale(0.85); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .modal-box .icon {
+            font-size: 48px;
+            color: #27ae60;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .modal-box h3 {
+            font-size: 18px;
+            color: #222;
+            margin-bottom: 8px;
+        }
+        .modal-box p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        .modal-box .btn-ok {
+            display: inline-block;
+            padding: 10px 40px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            background: #0066cc;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .modal-box .btn-ok:active {
+            background: #004b99;
+        }
+
+        /* ========== Footer ========== */
+        .footer {
+            background: #1a2332;
+            color: #b0bccd;
+            padding: 28px 20px 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .footer .info-item {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        .footer .info-item i {
+            width: 20px;
+            color: #0066cc;
+            margin-right: 6px;
+        }
+        .footer .info-item a {
+            color: #b0bccd;
+        }
+        .footer .info-item a:hover {
+            color: #fff;
+        }
+        .footer .copyright {
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px solid #2a3444;
+            font-size: 12px;
+            color: #7a879a;
+        }
+
+        /* ========== Responsive PC ========== */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 780px;
+                padding: 24px;
+            }
+            .service-grid {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+            .header {
+                padding: 48px 30px 36px;
+            }
+            .header h1 {
+                font-size: 28px;
+            }
+            .header .slogan {
+                font-size: 16px;
+            }
+        }
+
+        /* ========== Toast ========== */
+        .toast {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.78);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 15px;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .toast.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== Header ========== -->
+    <header class="header">
+        <h1>赣州经济技术开发区<br>怡阳通讯服务店</h1>
+        <p class="slogan">
+            <i class="fas fa-shield-alt"></i>
+            赣州专业弱电智能化服务
+            <i class="fas fa-network-wired"></i>
+        </p>
+    </header>
+
+    <!-- ========== Main Content ========== -->
+    <div class="container">
+
+        <!-- ===== 服务项目 ===== -->
+        <div class="section-title">
+            <i class="fas fa-concierge-bell"></i> 服务项目
+        </div>
+        <div class="card">
+            <div class="service-grid">
+                <div class="service-item">
+                    <span class="icon"><i class="fas fa-video"></i></span>
+                    <h3>安防监控安装</h3>
+                    <p>高清摄像头、POE供电、远程查看、存储方案一站式解决</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon"><i class="fas fa-code-branch"></i></span>
+                    <h3>网络布线</h3>
+                    <p>弱电布线、光纤熔接、WiFi覆盖、交换机配置</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon"><i class="fas fa-tools"></i></span>
+                    <h3>弱电工程</h3>
+                    <p>门禁对讲、停车系统、楼宇对讲、综合布线工程</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon"><i class="fas fa-microchip"></i></span>
+                    <h3>智能系统集成</h3>
+                    <p>智能家居、智慧安防、系统集成方案设计与实施</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 参考价格 ===== -->
+        <div class="section-title">
+            <i class="fas fa-tags"></i> 参考价格
+        </div>
+        <div class="card">
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>服务项目</th>
+                        <th>参考价格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>海康 200万POE摄像头安装</td>
+                        <td>700元/台起</td>
+                    </tr>
+                    <tr>
+                        <td>网线布线（含水晶头、面板）</td>
+                        <td>200元/点位起</td>
+                    </tr>
+                    <tr>
+                        <td>弱电配电箱安装调试</td>
+                        <td>350元/套起</td>
+                    </tr>
+                    <tr>
+                        <td>无线AP覆盖（单台安装）</td>
+                        <td>300元/台起</td>
+                    </tr>
+                    <tr>
+                        <td>门禁系统（单门安装）</td>
+                        <td>800元/套起</td>
+                    </tr>
+                    <tr>
+                        <td>智能家居系统方案</td>
+                        <td>面议</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="price-note">
+                <i class="fas fa-info-circle"></i>
+                注：以上价格为参考价格，实际费用以现场勘测评估为准
+            </div>
+        </div>
+
+        <!-- ===== 在线预约 ===== -->
+        <div class="section-title">
+            <i class="fas fa-calendar-check"></i> 在线预约
+        </div>
+        <div class="card">
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label>姓名 <span class="required">*</span></label>
+                    <input type="text" id="name" placeholder="请输入您的姓名" required>
+                </div>
+                <div class="form-group">
+                    <label>手机号 <span class="required">*</span></label>
+                    <input type="tel" id="phone" placeholder="请输入您的手机号码" required>
+                </div>
+                <div class="form-group">
+                    <label>服务类型 <span class="required">*</span></label>
+                    <select id="serviceType" required>
+                        <option value="">请选择服务类型</option>
+                        <option value="安防监控安装">安防监控安装</option>
+                        <option value="网络布线">网络布线</option>
+                        <option value="弱电工程">弱电工程</option>
+                        <option value="智能系统集成">智能系统集成</option>
+                        <option value="其他服务">其他服务</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>需求描述</label>
+                    <textarea id="desc" placeholder="请简要描述您的需求，如安装位置、数量等"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>期望上门时间</label>
+                    <input type="date" id="expectedDate">
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> 提交预约
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- ========== Modal ========== -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-box">
+            <span class="icon"><i class="fas fa-check-circle"></i></span>
+            <h3>预约已提交</h3>
+            <p>
+                感谢您的预约，我们会尽快联系您！<br>
+                请保持手机畅通哦 📞
+            </p>
+            <button class="btn-ok" onclick="closeModal()">知道了</button>
+        </div>
+    </div>
+
+    <!-- ========== Footer ========== -->
+    <footer class="footer">
+        <div class="info-item">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:0797-XXXXXXX">0797-XXXXXXX</a>
+            &nbsp;|&nbsp;
+            <a href="tel:138XXXXXXXX">138XXXXXXXX</a>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            赣州经济技术开发区（具体地址请电询）
+        </div>
+        <div class="info-item">
+            <i class="fas fa-clock"></i>
+            营业时间：周一至周日 8:00 - 18:00
+        </div>
+        <div class="copyright">
+            &copy; 2026 赣州经济技术开发区怡阳通讯服务店 &nbsp;|&nbsp; 用心服务，专业品质
+        </div>
+    </footer>
+
+    <!-- ========== Toast ========== -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        const form = document.getElementById('bookingForm');
+        const modal = document.getElementById('successModal');
+
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 2500);
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Basic validation
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const service = document.getElementById('serviceType').value;
+
+            if (!name) {
+                showToast('请输入您的姓名');
+                document.getElementById('name').focus();
+                return;
+            }
+            if (!phone || !/1\d{10}/.test(phone)) {
+                showToast('请输入正确的手机号码');
+                document.getElementById('phone').focus();
+                return;
+            }
+            if (!service) {
+                showToast('请选择服务类型');
+                return;
+            }
+
+            // Prepare form data for potential Formspree integration
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('phone', phone);
+            formData.append('serviceType', service);
+            formData.append('desc', document.getElementById('desc').value.trim());
+            formData.append('expectedDate', document.getElementById('expectedDate').value);
+            formData.append('_subject', '怡阳通讯 - 新服务预约');
+
+            // You can uncomment below to send to Formspree:
+            // fetch('https://formspree.io/f/yourFormID', {
+            //     method: 'POST',
+            //     body: formData,
+            //     headers: { 'Accept': 'application/json' }
+            // }).catch(() => {});
+
+            // Show success modal
+            modal.classList.add('active');
+            form.reset();
+        });
+
+        // Close modal on overlay click
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) closeModal();
+        });
+    </script>
+
+</body>
+</html>
