@@ -107,15 +107,21 @@
     <div class="logo-wrap">
         <div class="logo-row">
             <div class="logo-icon-circle">
-                <svg viewBox="0 0 60 60" width="52" height="52">
-                    <!-- Outer ring - thicker -->
-                    <circle cx="30" cy="30" r="28" fill="none" stroke="#f39c12" stroke-width="2.5"/>
-                    <!-- Inner accent arc - bottom -->
-                    <path d="M10,38 Q15,52 30,55 Q45,52 50,38" stroke="#f39c12" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.3"/>
-                    <!-- yy letter - bold modern italic -->
-                    <text x="12" y="42" font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-size="30" font-weight="900" fill="#f39c12" font-style="italic" letter-spacing="-2">yy</text>
-                    <!-- Small decorative dot -->
-                    <circle cx="48" cy="14" r="2.5" fill="#f39c12" opacity="0.4"/>
+                <svg viewBox="0 0 60 60" width="50" height="50">
+                    <!-- Base circle -->
+                    <circle cx="30" cy="30" r="29" fill="#002d5a"/>
+                    <circle cx="30" cy="30" r="27" fill="none" stroke="#f39c12" stroke-width="1.5" opacity="0.3"/>
+                    <!-- Left Y branch -->
+                    <path d="M30,12 L22,30 L22,46" stroke="#f39c12" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Right Y branch -->
+                    <path d="M30,12 L38,30 L38,46" stroke="#f39c12" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Center vertical - creates Y+Y -->
+                    <path d="M30,12 L30,46" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.5"/>
+                    <!-- Signal arcs -->
+                    <path d="M14,30 Q18,24 22,30" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.2"/>
+                    <path d="M38,30 Q42,24 46,30" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.2"/>
+                    <!-- Bottom accent bar -->
+                    <rect x="20" y="50" width="20" height="2.5" rx="1.25" fill="#f39c12" opacity="0.5"/>
                 </svg>
             </div>
             <div class="logo-text-group">
