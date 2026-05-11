@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>怡阳通讯 - 预约管理后台</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f0f4f8; color: #333; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, #004b99, #0066cc); color: #fff; padding: 20px 16px 16px; }
+        .header h1 { font-size: 20px; }
+        .header .sub { font-size: 13px; opacity: 0.8; margin-top: 4px; }
+        .container { max-width: 640px; margin: 0 auto; padding: 12px 16px; }
+        .login-box { max-width: 320px; margin: 80px auto; padding: 32px 24px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; }
+        .login-box h2 { margin-bottom: 20px; color: #004b99; }
+        .login-box input { width: 100%; padding: 12px; border: 1.5px solid #dce3ec; border-radius: 10px; font-size: 15px; margin-bottom: 14px; text-align: center; }
+        .login-box button { width: 100%; padding: 12px; background: linear-gradient(135deg, #004b99, #0066cc); color: #fff; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; }
+        .card { background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 20px; margin-bottom: 16px; }
+        .card .icon { font-size: 40px; color: #0066cc; margin-bottom: 10px; display: block; }
+        .card h3 { font-size: 17px; color: #222; margin-bottom: 6px; }
+        .card p { font-size: 14px; color: #666; line-height: 1.8; }
+        .card a { color: #0066cc; font-weight: 600; }
+        .card .step { display: flex; gap: 10px; margin-bottom: 14px; align-items: flex-start; }
+        .card .step-num { background: #0066cc; color: #fff; width: 26px; height: 26px; border-radius: 50%; text-align: center; line-height: 26px; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+        .card .step-text { font-size: 14px; color: #555; line-height: 1.6; }
+        .back-link { text-align: center; padding: 16px; font-size: 13px; }
+        .back-link a { color: #0066cc; }
+        .toast { position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); background: rgba(0,0,0,0.78); color: #fff; padding: 14px 28px; border-radius: 10px; font-size: 15px; z-index: 9999; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+        .toast.show { opacity: 1; }
+    </style>
+</head>
+<body>
+    <div class="toast" id="toast"></div>
+    
+    <!-- 登录页 -->
+    <div id="loginPage" class="login-box">
+        <h2><i class="fas fa-shield-alt"></i> 管理后台</h2>
+        <input type="password" id="pwdInput" placeholder="请输入管理密码" onkeydown="if(event.key==='Enter')checkPwd()">
+        <button onclick="checkPwd()">进入后台</button>
+        <div class="back-link"><a href="./">← 返回首页</a></div>
+    </div>
+
+    <!-- 管理后台 -->
+    <div id="adminPage" style="display:none;">
+        <div class="header">
+            <h1><i class="fas fa-inbox"></i> 预约管理</h1>
+            <div class="sub">客户提交的预约将自动发到QQ邮箱</div>
+        </div>
+        <div class="container">
+            <div class="card" style="text-align:center;">
+                <span class="icon"><i class="fas fa-envelope-open-text"></i></span>
+                <h3>预约通知已配置完成</h3>
+                <p>
+                    客户提交预约后，<br>
+                    会自动发送到你的 <strong>QQ邮箱</strong><br>
+                    <strong>531566849@qq.com</strong>
+                </p>
+                <p style="margin-top:14px;font-size:13px;color:#999;">
+                    <i class="fas fa-check-circle" style="color:#27ae60;"></i> 
+                    无需额外操作，直接在邮箱查看
+                </p>
+            </div>
+
+            <div class="card">
+                <h3 style="margin-bottom:12px;"><i class="fas fa-tasks"></i> 使用说明</h3>
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-text">客户在预约页面填写信息并提交</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-text">预约信息自动发送到你的 <strong>QQ邮箱</strong></div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-text">打开QQ邮箱查看客户姓名、电话、需求</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-text"><a href="tel:18107070735">点此拨打客户电话</a> 联系跟进</div>
+                </div>
+            </div>
+
+            <div class="card" style="text-align:center;border:2px dashed #0066cc;">
+                <span class="icon"><i class="fas fa-star"></i></span>
+                <h3>快捷入口</h3>
+                <p>
+                    <a href="https://mail.qq.com" target="_blank" style="display:inline-block;padding:8px 24px;background:#0066cc;color:#fff;border-radius:8px;margin:6px;">
+                        <i class="fas fa-external-link-alt"></i> 打开QQ邮箱
+                    </a>
+                    <br>
+                    <a href="tel:18107070735" style="display:inline-block;padding:8px 24px;background:#27ae60;color:#fff;border-radius:8px;margin:6px;">
+                        <i class="fas fa-phone"></i> 我的电话
+                    </a>
+                </p>
+            </div>
+
+            <div class="back-link"><a href="./">← 返回预约首页</a></div>
+        </div>
+    </div>
+
+    <script>
+        const PASSWORD = 'yiyang888';
+
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 2000);
+        }
+
+        function checkPwd() {
+            const pwd = document.getElementById('pwdInput').value;
+            if (pwd === PASSWORD) {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('adminPage').style.display = 'block';
+            } else {
+                showToast('密码错误');
+            }
+        }
+    </script>
+</body>
+</html>
