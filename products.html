@@ -13,25 +13,38 @@
         .header .back { color: #fff; font-size: 20px; }
         .header h1 { font-size: 18px; font-weight: 600; }
         .container { max-width: 640px; margin: 0 auto; padding: 12px; }
-        .brand-header { background: #fff; border-radius: var(--radius); padding: 16px; margin-bottom: 10px; text-align: center; box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
-        .brand-header h2 { font-size: 18px; color: var(--primary); }
-        .brand-header p { font-size: 12px; color: #999; margin-top: 4px; }
-        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+        
+        
+        
+        
         .product-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
-        .product-card .img-area { background: #f5f7fa; height: 100px; display: flex; align-items: center; justify-content: center; font-size: 32px; color: #ddd; position: relative; border-bottom: 1px solid #f0f0f0; }
+        
         .product-card .img-area .brand-badge { position: absolute; top: 8px; left: 8px; background: rgba(0,85,170,0.8); color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 10px; }
-        .product-card .info { padding: 12px; }
-        .product-card .info h4 { font-size: 14px; font-weight: 600; color: #222; }
-        .product-card .info .model { font-size: 11px; color: #999; margin: 2px 0; }
-        .product-card .info p { font-size: 12px; color: #666; margin-top: 4px; line-height: 1.6; }
-        .product-card .info .tag { display: inline-block; background: #e8f2ff; color: var(--primary); padding: 1px 8px; border-radius: 8px; font-size: 10px; margin-top: 6px; }
-        .category-title { font-size: 16px; font-weight: 700; color: var(--primary); padding: 12px 0 8px; display: flex; align-items: center; gap: 6px; }
+        
+        
+        
+        
+        
+        
         .contact-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 10px 16px; box-shadow: 0 -2px 10px rgba(0,0,0,0.08); display: flex; gap: 10px; z-index: 20; }
         .contact-bar .btn { flex: 1; padding: 10px; border-radius: 8px; font-size: 14px; font-weight: 600; text-align: center; border: none; cursor: pointer; }
         .contact-bar .btn-call { background: #27ae60; color: #fff; }
         .contact-bar .btn-book { background: var(--primary); color: #fff; }
-        @media (min-width: 768px) { .product-grid { grid-template-columns: 1fr 1fr 1fr; } .container { max-width: 760px; } }
-    </style>
+        
+            
+        .product-card .img-icon{height:56px;display:flex;align-items:center;justify-content:center;background:#f5f7fa;font-size:28px;color:#0055aa;border-bottom:1px solid #f0f0f0}
+        .product-card .info{padding:12px}
+        .product-card .info h4{font-size:14px;font-weight:600;color:#222;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+        .product-card .brand-tag{display:inline-block;background:#0055aa;color:#fff;font-size:9px;padding:1px 8px;border-radius:10px;font-weight:600;white-space:nowrap}
+        .product-card .info .model{font-size:11px;color:#999;margin:2px 0}
+        .product-card .info p{font-size:12px;color:#666;margin-top:4px;line-height:1.6}
+        .product-card .info .tag{display:inline-block;background:#e8f2ff;color:#0055aa;padding:1px 8px;border-radius:8px;font-size:10px;margin-top:6px;margin-right:3px}
+        .brand-header{background:#fff;border-radius:var(--radius);padding:16px;margin-bottom:10px;text-align:center;box-shadow:0 1px 6px rgba(0,0,0,0.06)}
+        .brand-header h2{font-size:18px;color:var(--primary)}
+        .brand-header p{font-size:12px;color:#999;margin-top:4px}
+        .category-title{font-size:16px;font-weight:700;color:var(--primary);padding:12px 0 8px;display:flex;align-items:center;gap:6px}
+        .product-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+        </style>
 </head>
 <body>
     <div class="header">
@@ -41,91 +54,47 @@
     <div class="container">
 
         <div class="brand-header">
-            <h2><i class="fas fa-handshake"></i> 海康威视 · 大华 · 锐捷 · 华为</h2>
-            <p>全系产品授权，正品保障，支持定制方案</p>
+            <h2><i class="fas fa-handshake"></i> 合作品牌一览</h2>
+            <p>海康威视 · 大华 · 锐捷 · 华为 · ITC · 烽火 · 图腾</p>
         </div>
 
         <!-- 安防监控 -->
         <div class="category-title"><i class="fas fa-video"></i> 安防监控</div>
         <div class="product-grid">
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#0055aa;opacity:0.25"><i class="fas fa-camera"></i></div>
-    <span class="brand-badge" style="background:#0055aa;color:#fff">海康威视</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">红外网络摄像机</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">DS-2CD3T系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#0055aa!important">海康威视</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=400&h=300&fit=crop&crop=center" alt="红外摄像机" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    <span class="brand-badge">海康威视</span>
-  </div>
+                <div class="img-icon"><i class="fas fa-camera"></i></div>
                 <div class="info">
-                    <h4>红外网络摄像机</h4>
+                    <h4>红外网络摄像机 <span class="brand-tag">海康威视</span></h4>
                     <div class="model">DS-2CD3T系列</div>
-                    <p>200万/400万高清像素，智能红外补光，IP67防水防尘，POE供电。适用于室内外监控场景。</p>
-                    <span class="tag">夜视红外</span> <span class="tag">POE供电</span>
+                    <p>200万/400万高清像素，智能红外补光，IP67防水防尘，POE供电。</p>
+                    <span class="tag">夜视红外</span> <span class="tag">POE供电</span> <span class="tag">IP67防水</span>
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#0055aa;opacity:0.25"><i class="fas fa-hdd"></i></div>
-    <span class="brand-badge" style="background:#0055aa;color:#fff">海康威视</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">NVR硬盘录像机</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">DS-7600系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#0055aa!important">海康威视</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=400&h=300&fit=crop&crop=center" alt="NVR录像机" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    
-  </div>
+                <div class="img-icon"><i class="fas fa-hdd"></i></div>
                 <div class="info">
-                    <h4>NVR硬盘录像机</h4>
+                    <h4>NVR硬盘录像机 <span class="brand-tag">海康威视</span></h4>
                     <div class="model">DS-7600系列</div>
-                    <p>4路/8路/16路/32路可选，H.265编码，支持4K解码，手机APP远程查看，智能分析。</p>
-                    <span class="tag">H.265编码</span> <span class="tag">远程访问</span>
+                    <p>4路/8路/16路/32路，H.265编码，支持4K解码，手机远程。</p>
+                    <span class="tag">H.265编码</span> <span class="tag">远程访问</span> <span class="tag">4K解码</span>
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#e74c3c;opacity:0.25"><i class="fas fa-camera-retro"></i></div>
-    <span class="brand-badge" style="background:#e74c3c;color:#fff">大华</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">智能球型摄像机</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">SD系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#e74c3c!important">大华</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=400&h=300&fit=crop&crop=center" alt="大华球机" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    <span class="brand-badge">大华</span>
-  </div>
+                <div class="img-icon" style="color:#e74c3c"><i class="fas fa-camera-retro"></i></div>
                 <div class="info">
-                    <h4>智能球型摄像机</h4>
+                    <h4>智能球型摄像机 <span class="brand-tag" style="background:#e74c3c">大华</span></h4>
                     <div class="model">SD系列</div>
-                    <p>360°全景旋转，自动巡航，智能跟踪，超低照度星光级夜视，适用于大范围监控。</p>
-                    <span class="tag">全景旋转</span> <span class="tag">智能跟踪</span>
+                    <p>360°全景旋转，自动跟踪，智能分析，星光级夜视。</p>
+                    <span class="tag">全景旋转</span> <span class="tag">智能跟踪</span> <span class="tag">星光夜视</span>
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#e74c3c;opacity:0.25"><i class="fas fa-microchip"></i></div>
-    <span class="brand-badge" style="background:#e74c3c;color:#fff">大华</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">AI智能录像机</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">XVR系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#e74c3c!important">大华</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=400&h=300&fit=crop&crop=center" alt="AI录像机" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    
-  </div>
+                <div class="img-icon" style="color:#e74c3c"><i class="fas fa-microchip"></i></div>
                 <div class="info">
-                    <h4>AI智能录像机</h4>
-                    <div class="model">NVR5系列</div>
-                    <p>内置AI算法，支持人脸识别、周界防范、异常报警、智能检索，智慧安防核心。</p>
-                    <span class="tag">AI智能</span> <span class="tag">人脸识别</span>
+                    <h4>AI智能录像机 <span class="brand-tag" style="background:#e74c3c">大华</span></h4>
+                    <div class="model">XVR系列</div>
+                    <p>AI人脸识别，智能分析，多路接入，高清存储。</p>
+                    <span class="tag">AI识别</span> <span class="tag">智能分析</span> <span class="tag">多路接入</span>
                 </div>
             </div>
         </div>
@@ -134,168 +103,103 @@
         <div class="category-title"><i class="fas fa-wifi"></i> 网络设备</div>
         <div class="product-grid">
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#e67e22;opacity:0.25"><i class="fas fa-wifi"></i></div>
-    <span class="brand-badge" style="background:#e67e22;color:#fff">锐捷</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">无线AP</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">RG-AP720系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#e67e22!important">锐捷</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=400&h=300&fit=crop&crop=center" alt="锐捷AP" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    
-  </div>
+                <div class="img-icon" style="color:#e67e22"><i class="fas fa-wifi"></i></div>
                 <div class="info">
-                    <h4>无线AP面板</h4>
-                    <div class="model">RG-RAP系列</div>
-                    <p>86面板式设计，WiFi6千兆，支持Mesh组网，无缝漫游，PoE供电。全屋信号无死角。</p>
-                    <span class="tag">WiFi6</span> <span class="tag">无缝漫游</span>
+                    <h4>无线AP <span class="brand-tag" style="background:#e67e22">锐捷</span></h4>
+                    <div class="model">RG-AP720系列</div>
+                    <p>双频千兆，无缝漫游，支持AC集中管理，酒店/办公楼适用。</p>
+                    <span class="tag">双频千兆</span> <span class="tag">无缝漫游</span> <span class="tag">AC管理</span>
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#e67e22;opacity:0.25"><i class="fas fa-code-branch"></i></div>
-    <span class="brand-badge" style="background:#e67e22;color:#fff">锐捷</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">POE交换机</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">RG-S2900系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#e67e22!important">锐捷</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center" alt="POE交换机" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    <span class="brand-badge">锐捷</span>
-  </div>
+                <div class="img-icon" style="color:#e67e22"><i class="fas fa-code-branch"></i></div>
                 <div class="info">
-                    <h4>POE交换机</h4>
-                    <div class="model">RG-S系列</div>
-                    <p>5口/8口/16口/24口千兆PoE交换机，即插即用，智能供电管理，静音设计。</p>
-                    <span class="tag">千兆PoE</span> <span class="tag">静音散热</span>
+                    <h4>POE交换机 <span class="brand-tag" style="background:#e67e22">锐捷</span></h4>
+                    <div class="model">RG-S2900系列</div>
+                    <p>8口/24口/48口，POE+供电，千兆上联，全管理型。</p>
+                    <span class="tag">POE+供电</span> <span class="tag">千兆上联</span> <span class="tag">管理型</span>
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#cf0a2c;opacity:0.25"><i class="fas fa-wifi"></i></div>
-    <span class="brand-badge" style="background:#cf0a2c;color:#fff">华为</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">WiFi6路由器</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">华为AX3系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#cf0a2c!important">华为</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=400&h=300&fit=crop&crop=center" alt="华为路由器" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    <span class="brand-badge">华为</span>
-  </div>
+                <div class="img-icon" style="color:#cf0a2c"><i class="fas fa-wifi"></i></div>
                 <div class="info">
-                    <h4>企业级路由器</h4>
-                    <div class="model">AR系列</div>
-                    <p>高性能企业路由，支持多WAN口策略，千兆转发，VPN组网，安全防护，适用于中大型网络。</p>
-                    <span class="tag">千兆转发</span> <span class="tag">VPN组网</span>
+                    <h4>WiFi6路由器 <span class="brand-tag" style="background:#cf0a2c">华为</span></h4>
+                    <div class="model">华为AX3系列</div>
+                    <p>WiFi6 千兆，支持全光方案，Mesh组网，覆盖无死角。</p>
+                    <span class="tag">WiFi6</span> <span class="tag">Mesh组网</span> <span class="tag">全光方案</span>
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#cf0a2c;opacity:0.25"><i class="fas fa-server"></i></div>
-    <span class="brand-badge" style="background:#cf0a2c;color:#fff">华为</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">汇聚交换机</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">S5720系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#cf0a2c!important">华为</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center" alt="汇聚交换机" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    <span class="brand-badge">华为</span>
-  </div>
+                <div class="img-icon" style="color:#cf0a2c"><i class="fas fa-server"></i></div>
                 <div class="info">
-                    <h4>汇聚交换机</h4>
-                    <div class="model">S系列</div>
-                    <p>全千兆/万兆上行，支持堆叠、VLAN、ACL，网管型交换机，适用于核心网络部署。</p>
-                    <span class="tag">万兆上行</span> <span class="tag">网管型</span>
+                    <h4>汇聚交换机 <span class="brand-tag" style="background:#cf0a2c">华为</span></h4>
+                    <div class="model">S5720系列</div>
+                    <p>万兆上联，VLAN划分，QoS保障，企业级核心交换。</p>
+                    <span class="tag">万兆上联</span> <span class="tag">VLAN</span> <span class="tag">企业级</span>
                 </div>
             </div>
         </div>
 
-        <!-- 智能客控 -->
-        <div class="category-title"><i class="fas fa-home"></i> 智能客控 · 声光</div>
+        <!-- 智能客控·声光 -->
+        <div class="category-title"><i class="fas fa-home"></i> 智能客控 · 声光系统</div>
         <div class="product-grid">
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#0055aa;opacity:0.25"><i class="fas fa-home"></i></div>
-    <span class="brand-badge" style="background:#0055aa;color:#fff">海康威视</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">RCU客控主机</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">DS-K系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#0055aa!important">海康威视</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=300&fit=crop&crop=center" alt="RCU客控" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    
-  </div>
+                <div class="img-icon"><i class="fas fa-home"></i></div>
                 <div class="info">
-                    <h4>客房智能控制系统</h4>
-                    <div class="model">RCU控制器</div>
-                    <p>智能客房中控，支持灯光场景、空调温控、电动窗帘联动、门锁联动，后台统一管理。瑞金天沐温泉270间客房采用本方案。</p>
-                    <span class="tag">灯光控制</span> <span class="tag">RCU</span>
+                    <h4>RCU客控主机 <span class="brand-tag">海康威视</span></h4>
+                    <div class="model">DS-K系列</div>
+                    <p>客房灯光/空调/窗帘集中控制，支持场景模式，后台管理。</p>
+                    <span class="tag">灯光控制</span> <span class="tag">场景模式</span> <span class="tag">后台管理</span>
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#cf0a2c;opacity:0.25"><i class="fas fa-microchip"></i></div>
-    <span class="brand-badge" style="background:#cf0a2c;color:#fff">华为</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">智能家居面板</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">华为智选</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#cf0a2c!important">华为</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=300&fit=crop&crop=center" alt="智能家居面板" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    <span class="brand-badge">国产优质</span>
-  </div>
+                <div class="img-icon" style="color:#cf0a2c"><i class="fas fa-microchip"></i></div>
                 <div class="info">
-                    <h4>智能灯光系统</h4>
-                    <div class="model">DALI/调光</div>
-                    <p>支持DALI/0-10V调光，场景预设（欢迎/阅读/睡眠/起夜），可集成RCU客控系统，智能节能。</p>
-                    <span class="tag">场景预设</span> <span class="tag">智能调光</span>
+                    <h4>智能家居面板 <span class="brand-tag" style="background:#cf0a2c">华为</span></h4>
+                    <div class="model">华为智选</div>
+                    <p>智能灯光/窗帘/空调面板，触控操作，支持语音联动。</p>
+                    <span class="tag">触控面板</span> <span class="tag">语音联动</span> <span class="tag">智能联动</span>
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#8e44ad;opacity:0.25"><i class="fas fa-music"></i></div>
-    <span class="brand-badge" style="background:#8e44ad;color:#fff">ITC</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">专业音响系统</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">ITC-T系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#8e44ad!important">ITC</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1533176892543-52e2629b1c77?w=400&h=300&fit=crop&crop=center" alt="专业音响" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    <span class="brand-badge">JBL/惠威</span>
-  </div>
+                <div class="img-icon" style="color:#8e44ad"><i class="fas fa-music"></i></div>
                 <div class="info">
-                    <h4>专业音响系统</h4>
-                    <div class="model">线阵/全频</div>
-                    <p>线阵音响、全频音箱、超低音、功放、调音台、数字处理器，适用于宴会厅、多功能厅、会议室。</p>
-                    <span class="tag">宴会厅</span> <span class="tag">会议室</span>
+                    <h4>专业音响系统 <span class="brand-tag" style="background:#8e44ad">ITC</span></h4>
+                    <div class="model">ITC-T系列</div>
+                    <p>会议/宴会厅专业音响，无线麦克风，功放调音台一体。</p>
+                    <span class="tag">专业音响</span> <span class="tag">无线麦</span> <span class="tag">调音台</span>
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#8e44ad;opacity:0.25"><i class="fas fa-tv"></i></div>
-    <span class="brand-badge" style="background:#8e44ad;color:#fff">ITC</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">LED全彩大屏</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">P2.5系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#8e44ad!important">ITC</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1533176892543-52e2629b1c77?w=400&h=300&fit=crop&crop=center" alt="LED大屏" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    <span class="brand-badge">强力/利亚德</span>
-  </div>
+                <div class="img-icon" style="color:#8e44ad"><i class="fas fa-tv"></i></div>
                 <div class="info">
-                    <h4>LED全彩显示屏</h4>
-                    <div class="model">P2/P3/P4</div>
-                    <p>室内/户外LED全彩屏，P2-P10间距可选，无缝拼接，支持视频播放、会议投屏、舞台背景。</p>
-                    <span class="tag">全彩高清</span> <span class="tag">无缝拼接</span>
+                    <h4>LED全彩大屏 <span class="brand-tag" style="background:#8e44ad">ITC</span></h4>
+                    <div class="model">P2.5系列</div>
+                    <p>P2.5全彩显示屏，高清画质，适用于会议室/宴会厅/大厅。</p>
+                    <span class="tag">全彩高清</span> <span class="tag">P2.5</span> <span class="tag">工程安装</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 停车场 -->
+        <div class="category-title"><i class="fas fa-car"></i> 停车场系统</div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="img-icon" style="color:#e74c3c"><i class="fas fa-car"></i></div>
+                <div class="info">
+                    <h4>车牌识别一体机 <span class="brand-tag" style="background:#e74c3c">大华</span></h4>
+                    <div class="model">DH系列</div>
+                    <p>高清车牌识别，自动抬杆，支持微信支付宝扫码支付。</p>
+                    <span class="tag">车牌识别</span> <span class="tag">扫码支付</span> <span class="tag">无人值守</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="img-icon" style="color:#e74c3c"><i class="fas fa-car"></i></div>
+                <div class="info">
+                    <h4>智能道闸 <span class="brand-tag" style="background:#e74c3c">大华</span></h4>
+                    <div class="model">DH-DZ系列</div>
+                    <p>直杆/栅栏/广告道闸，变频调速，防砸车功能。</p>
+                    <span class="tag">直杆道闸</span> <span class="tag">防砸车</span> <span class="tag">广告道闸</span>
                 </div>
             </div>
         </div>
@@ -304,219 +208,90 @@
         <div class="category-title"><i class="fas fa-fire-extinguisher"></i> 智慧消防</div>
         <div class="product-grid">
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#e74c3c;opacity:0.25"><i class="fas fa-car"></i></div>
-    <span class="brand-badge" style="background:#e74c3c;color:#fff">大华</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">车牌识别一体机</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">DH系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#e74c3c!important">大华</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1580674285054-bed31eacf475?w=400&h=300&fit=crop&crop=center" alt="车牌识别" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    <span class="brand-badge">海康/大华</span>
-  </div>
+                <div class="img-icon"><i class="fas fa-fire-extinguisher"></i></div>
                 <div class="info">
-                    <h4>智慧消防平台</h4>
-                    <div class="model">消防物联网</div>
-                    <p>消防报警主机联网、视频联动、消防水压监测、电气火灾监控、智慧消防云平台。赣南医科大学采用本方案。</p>
-                    <span class="tag">消防联动</span> <span class="tag">物联网</span>
+                    <h4>智慧烟感 <span class="brand-tag">海康威视</span></h4>
+                    <div class="model">NP-F系列</div>
+                    <p>联网型火灾报警器，手机APP实时监控，远程报警推送。</p>
+                    <span class="tag">联网报警</span> <span class="tag">APP监控</span> <span class="tag">远程推送</span>
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#e74c3c;opacity:0.25"><i class="fas fa-car"></i></div>
-    <span class="brand-badge" style="background:#e74c3c;color:#fff">大华</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">智能道闸</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">DH-DZ系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#e74c3c!important">大华</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1580674285054-bed31eacf475?w=400&h=300&fit=crop&crop=center" alt="智能道闸" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    <span class="brand-badge">依爱/泰和安</span>
-  </div>
+                <div class="img-icon"><i class="fas fa-fire"></i></div>
                 <div class="info">
-                    <h4>火灾报警系统</h4>
-                    <div class="model">联动型</div>
-                    <p>烟感/温感探测器、手报、声光报警器、消防控制主机，支持联动喷淋、排烟、广播疏散。</p>
-                    <span class="tag">智能探测</span> <span class="tag">自动联动</span>
+                    <h4>消防报警主机 <span class="brand-tag">海康威视</span></h4>
+                    <div class="model">DS-19A系列</div>
+                    <p>多防区报警主机，支持消防联动，视频复核联动。</p>
+                    <span class="tag">消防联动</span> <span class="tag">视频复核</span> <span class="tag">多防区</span>
                 </div>
             </div>
         </div>
 
-        <!-- 门禁停车 -->
-        <div class="category-title"><i class="fas fa-lock"></i> 门禁 · 停车 · 智能</div>
+        <!-- 门禁对讲 -->
+        <div class="category-title"><i class="fas fa-lock"></i> 门禁 · 对讲</div>
         <div class="product-grid">
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#0055aa;opacity:0.25"><i class="fas fa-fire-extinguisher"></i></div>
-    <span class="brand-badge" style="background:#0055aa;color:#fff">海康威视</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">智慧烟感</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">NP-F系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#0055aa!important">海康威视</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=400&h=300&fit=crop&crop=center" alt="烟感报警器" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    <span class="brand-badge">海康威视</span>
-  </div>
+                <div class="img-icon"><i class="fas fa-lock"></i></div>
                 <div class="info">
-                    <h4>人脸识别门禁</h4>
-                    <div class="model">DS-K系列</div>
-                    <p>深度学习算法，毫秒级识别，支持口罩检测、活体防伪，可与访客系统联动。</p>
-                    <span class="tag">人脸识别</span> <span class="tag">活体检测</span>
+                    <h4>人脸门禁一体机 <span class="brand-tag">海康威视</span></h4>
+                    <div class="model">DS-K1T系列</div>
+                    <p>人脸识别/刷卡/密码开门，戴口罩识别，体温检测。</p>
+                    <span class="tag">人脸识别</span> <span class="tag">体温检测</span> <span class="tag">戴口罩识别</span>
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#0055aa;opacity:0.25"><i class="fas fa-fire"></i></div>
-    <span class="brand-badge" style="background:#0055aa;color:#fff">海康威视</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">消防报警主机</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">DS-19A系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#0055aa!important">海康威视</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=400&h=300&fit=crop&crop=center" alt="消防主机" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    
-  </div>
+                <div class="img-icon"><i class="fas fa-phone-alt"></i></div>
                 <div class="info">
-                    <h4>车牌识别一体机</h4>
-                    <div class="model">DH系列</div>
-                    <p>200万像素车牌识别，内置LED补光，识别率99%+，支持黑名单、白名单，支持移动支付。</p>
-                    <span class="tag">车牌识别</span> <span class="tag">无人值守</span>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#0055aa;opacity:0.25"><i class="fas fa-lock"></i></div>
-    <span class="brand-badge" style="background:#0055aa;color:#fff">海康威视</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">人脸门禁一体机</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">DS-K1T系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#0055aa!important">海康威视</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1558002256-ae44880f2b12?w=400&h=300&fit=crop&crop=center" alt="人脸门禁机" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    
-  </div>
-                <div class="info">
-                    <h4>智能家居网关</h4>
-                    <div class="model">华为智慧屏</div>
-                    <p>支持PLC-IoT、WiFi、ZigBee多协议，联动灯光、窗帘、空调、安防，打造全屋智能。</p>
-                    <span class="tag">全屋智能</span> <span class="tag">多协议</span>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#0055aa;opacity:0.25"><i class="fas fa-phone-alt"></i></div>
-    <span class="brand-badge" style="background:#0055aa;color:#fff">海康威视</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">可视对讲室内机</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">DS-KH系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#0055aa!important">海康威视</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1558002256-ae44880f2b12?w=400&h=300&fit=crop&crop=center" alt="可视对讲" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    
-  </div>
-                <div class="info">
-                    <h4>公共广播系统</h4>
-                    <div class="model">IP网络广播</div>
-                    <p>IP网络广播主机+功放+天花喇叭，支持背景音乐播放、紧急广播、定时任务、消防联动。</p>
-                    <span class="tag">背景音乐</span> <span class="tag">消防联动</span>
+                    <h4>可视对讲室内机 <span class="brand-tag">海康威视</span></h4>
+                    <div class="model">DS-KH系列</div>
+                    <p>7寸触摸屏，访客视频通话，远程开门，物业呼叫。</p>
+                    <span class="tag">视频通话</span> <span class="tag">远程开门</span> <span class="tag">物业呼叫</span>
                 </div>
             </div>
         </div>
 
         <!-- 布线光纤 -->
-        <div class="category-title"><i class="fas fa-code-branch"></i> 布线 · 光纤 · 机柜</div>
+        <div class="category-title"><i class="fas fa-tachometer-alt"></i> 布线 · 光纤 · 机柜</div>
         <div class="product-grid">
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#2ecc71;opacity:0.25"><i class="fas fa-tachometer-alt"></i></div>
-    <span class="brand-badge" style="background:#2ecc71;color:#fff">烽火</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">光纤配线架</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">ODF系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#2ecc71!important">烽火</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop&crop=center" alt="光纤设备" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    
-  </div>
+                <div class="img-icon" style="color:#2ecc71"><i class="fas fa-tachometer-alt"></i></div>
                 <div class="info">
-                    <h4>光纤/光缆</h4>
-                    <div class="model">单模/多模</div>
-                    <p>皮线光缆、室内光缆、室外铠装光缆，含光纤熔接、冷接、测试服务，支持FTTH/FTTR。</p>
-                    <span class="tag">光纤入户</span> <span class="tag">FTTR</span>
+                    <h4>光纤配线架 <span class="brand-tag" style="background:#2ecc71">烽火</span></h4>
+                    <div class="model">ODF系列</div>
+                    <p>12芯/24芯/48芯，抽拉式设计，光纤熔接保护。</p>
+                    <span class="tag">多芯可选</span> <span class="tag">抽拉式</span> <span class="tag">熔接保护</span>
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#3498db;opacity:0.25"><i class="fas fa-tasks"></i></div>
-    <span class="brand-badge" style="background:#3498db;color:#fff">图腾</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">标准服务器机柜</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">42U系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#3498db!important">图腾</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop&crop=center" alt="标准机柜" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    <span class="brand-badge">图腾/威图</span>
-  </div>
+                <div class="img-icon" style="color:#3498db"><i class="fas fa-tasks"></i></div>
                 <div class="info">
-                    <h4>网络机柜</h4>
-                    <div class="model">标准机柜</div>
-                    <p>6U/12U/22U/42U标准机柜，含PDU电源、层板、理线器，冷轧钢板，承重力强。</p>
-                    <span class="tag">标准尺寸</span> <span class="tag">散热好</span>
+                    <h4>标准服务器机柜 <span class="brand-tag" style="background:#3498db">图腾</span></h4>
+                    <div class="model">42U系列</div>
+                    <p>600×1000，网孔门散热，承重800kg+，含PDU。</p>
+                    <span class="tag">42U</span> <span class="tag">网孔散热</span> <span class="tag">承重800kg</span>
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#8e44ad;opacity:0.25"><i class="fas fa-broadcast-tower"></i></div>
-    <span class="brand-badge" style="background:#8e44ad;color:#fff">ITC</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">红外网络摄像机</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">DS-2CD3T系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#0055aa!important">海康威视</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=400&h=300&fit=crop&crop=center" alt="产品" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    <span class="brand-badge">安普/康普</span>
-  </div>
+                <div class="img-icon" style="color:#8e44ad"><i class="fas fa-broadcast-tower"></i></div>
                 <div class="info">
-                    <h4>网络跳线/模块</h4>
-                    <div class="model">超五类/六类</div>
-                    <p>六类网线、水晶头、模块、面板、配线架，T568B标准，通过Fluke测试认证。</p>
-                    <span class="tag">六类标准</span> <span class="tag">Fluke测试</span>
+                    <h4>公共广播系统 <span class="brand-tag" style="background:#8e44ad">ITC</span></h4>
+                    <div class="model">ITC-8000系列</div>
+                    <p>IP网络广播，分区播放，消防联动，背景音乐。</p>
+                    <span class="tag">IP网络</span> <span class="tag">分区播放</span> <span class="tag">消防联动</span>
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-area" style="display:flex;align-items:center;justify-content:center;background:#f5f7fa;height:100px;position:relative">
-    <div style="font-size:36px;color:#2980b9;opacity:0.25"><i class="fas fa-wrench"></i></div>
-    <span class="brand-badge" style="background:#2980b9;color:#fff">安普</span>
-  </div>
-    <div style="font-size:13px;font-weight:600;color:#fff;text-align:center;background:rgba(255,255,255,0.1);padding:4px 16px;border-radius:8px;max-width:80%">红外网络摄像机</div>
-    <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px">DS-2CD3T系列</div>
-    <span class="brand-badge" style="background:rgba(255,255,255,0.9)!important;color:#0055aa!important">海康威视</span>
-  </div>
-    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=400&h=300&fit=crop&crop=center" alt="产品" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0" loading="lazy"
-      onerror="this.style.display=\'none\'">
-    <span class="brand-badge">国产优质</span>
-  </div>
+                <div class="img-icon" style="color:#2980b9"><i class="fas fa-wrench"></i></div>
                 <div class="info">
-                    <h4>桥架/线管</h4>
-                    <div class="model">镀锌/防火</div>
-                    <p>金属线槽、PVC线管、镀锌桥架、防火桥架，按需定制尺寸，规范化布线施工。</p>
-                    <span class="tag">规范施工</span> <span class="tag">防火阻燃</span>
+                    <h4>综合布线系统 <span class="brand-tag" style="background:#2980b9">安普</span></h4>
+                    <div class="model">六类/超五类</div>
+                    <p>六类/超五类网线，模块面板跳线，信息点端接测试。</p>
+                    <span class="tag">六类网线</span> <span class="tag">模块面板</span> <span class="tag">端接测试</span>
                 </div>
             </div>
         </div>
 
-    </div>
-    <div style="height:70px;"></div>
+    </div></div>
     <div class="contact-bar">
         <a href="tel:18107070735" class="btn btn-call"><i class="fas fa-phone-alt"></i> 咨询报价</a>
         <a href="./" class="btn btn-book"><i class="fas fa-calendar-check"></i> 在线预约</a>
