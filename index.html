@@ -6,64 +6,61 @@
     <title>怡阳通讯 - 赣州专业弱电智能化服务商</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root {
-            --primary: #0055aa;
-            --primary-dark: #003d7a;
-            --primary-light: #e8f2ff;
-            --accent: #e67e22;
-            --gray: #f5f7fa;
-            --text: #2c3e50;
-            --text-light: #7f8c8d;
-            --radius: 12px;
-        }
+        :root { --primary: #0055aa; --primary-dark: #003d7a; --primary-light: #e8f2ff; --accent: #e67e22; --gray: #f5f7fa; --text: #2c3e50; --radius: 12px; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; background: #fff; color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         a { text-decoration: none; }
-        img { max-width: 100%; display: block; }
 
-        /* ===== Header / Hero ===== */
-        .hero {
-            background: linear-gradient(135deg, #003d7a 0%, #0055aa 50%, #0077cc 100%);
-            color: #fff;
-            padding: 40px 20px 36px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 60%);
-        }
+        .hero { background: linear-gradient(135deg, #003d7a 0%, #0055aa 50%, #0077cc 100%); color: #fff; padding: 40px 20px 36px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 60%); }
         .hero h1 { font-size: 22px; font-weight: 800; letter-spacing: 2px; position: relative; }
         .hero .brand { font-size: 13px; opacity: 0.85; margin-top: 4px; position: relative; letter-spacing: 4px; }
         .hero .slogan { margin-top: 14px; font-size: 14px; opacity: 0.92; position: relative; }
-        .hero .slogan i { margin: 0 4px; }
         .hero .badge-row { display: flex; justify-content: center; gap: 12px; margin-top: 18px; position: relative; flex-wrap: wrap; }
         .hero .badge { background: rgba(255,255,255,0.15); backdrop-filter: blur(4px); border-radius: 20px; padding: 6px 14px; font-size: 12px; }
 
-        /* ===== Container ===== */
         .container { max-width: 640px; margin: 0 auto; padding: 0 16px; }
 
-        /* ===== Section Title ===== */
         .section { padding: 28px 0 8px; }
-        .section-title {
-            font-size: 18px; font-weight: 700; color: var(--primary);
-            display: flex; align-items: center; gap: 8px;
-            padding: 0 0 12px 0;
-        }
+        .section-title { font-size: 18px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 8px; padding: 0 0 12px 0; }
         .section-title i { font-size: 18px; }
-        .section-title::after { content: ''; flex: 1; height: 2px; background: linear-gradient(90deg, var(--primary) 0%, transparent 100%); margin-left: 8px; }
+        .section-title::after { content: ''; flex: 1; height: 2px; background: linear-gradient(90deg, var(--primary), transparent 100%); margin-left: 8px; }
 
-        /* ===== Card ===== */
         .card { background: #fff; border-radius: var(--radius); padding: 20px; margin-bottom: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #eef2f7; }
-        .card-alt { background: var(--gray); border-radius: var(--radius); padding: 20px; margin-bottom: 14px; }
 
-        /* ===== About ===== */
+        /* ===== 服务项目九宫格 ===== */
+        .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .service-item {
+            background: #fff; border-radius: var(--radius); padding: 18px 12px; text-align: center;
+            box-shadow: 0 2px 8px rgba(0,85,170,0.06); border: 1px solid #eaf0f6;
+            cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-item:active { transform: scale(0.95); box-shadow: 0 1px 4px rgba(0,85,170,0.1); }
+        .service-item .icon { font-size: 28px; color: var(--primary); margin-bottom: 6px; display: block; }
+        .service-item h3 { font-size: 14px; font-weight: 600; color: #222; }
+        .service-item p { font-size: 11px; color: #999; margin-top: 3px; }
+
+        /* ===== 详情弹窗 ===== */
+        .detail-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.55); z-index: 9998; overflow-y: auto; padding: 20px; }
+        .detail-overlay.active { display: block; }
+        .detail-box { background: #fff; border-radius: 16px; max-width: 520px; margin: 30px auto; overflow: hidden; animation: detailIn 0.3s ease; }
+        @keyframes detailIn { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .detail-header { background: linear-gradient(135deg, #003d7a, #0055aa); color: #fff; padding: 24px 20px; position: relative; }
+        .detail-header .icon-big { font-size: 36px; display: block; margin-bottom: 6px; }
+        .detail-header h2 { font-size: 20px; }
+        .detail-header .close-btn { position: absolute; top: 14px; right: 16px; background: rgba(255,255,255,0.2); border: none; color: #fff; width: 32px; height: 32px; border-radius: 50%; font-size: 16px; cursor: pointer; }
+        .detail-body { padding: 20px; }
+        .detail-body .desc { font-size: 14px; color: #555; line-height: 1.9; }
+        .detail-body .sub-title { font-size: 15px; font-weight: 600; color: var(--primary); margin: 16px 0 8px; display: flex; align-items: center; gap: 6px; }
+        .detail-body .feature-list { list-style: none; }
+        .detail-body .feature-list li { font-size: 13px; color: #555; padding: 6px 0; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #f0f0f0; }
+        .detail-body .feature-list li:last-child { border-bottom: none; }
+        .detail-body .feature-list li i { color: var(--primary); width: 18px; text-align: center; }
+        .detail-body .price-box { background: var(--primary-light); border-radius: 10px; padding: 14px; margin-top: 14px; text-align: center; }
+        .detail-body .price-box span { font-weight: 700; color: var(--primary); }
+        .detail-footer { padding: 0 20px 20px; }
+        .detail-footer .btn-consult { display: block; text-align: center; background: var(--accent); color: #fff; padding: 12px; border-radius: 10px; font-size: 15px; font-weight: 600; }
+
         .about-text { font-size: 14px; color: #555; line-height: 1.9; }
         .about-text strong { color: var(--primary); }
         .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
@@ -71,98 +68,49 @@
         .about-highlight .num { font-size: 22px; font-weight: 800; color: var(--primary); }
         .about-highlight .label { font-size: 12px; color: #666; margin-top: 2px; }
 
-        /* ===== Service Grid ===== */
-        .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .service-item {
-            background: #fff; border-radius: var(--radius); padding: 18px 14px; text-align: center;
-            box-shadow: 0 2px 8px rgba(0,85,170,0.06); border: 1px solid #eaf0f6;
-            transition: transform 0.2s;
-        }
-        .service-item:active { transform: scale(0.96); }
-        .service-item .icon { font-size: 30px; color: var(--primary); margin-bottom: 8px; display: block; }
-        .service-item h3 { font-size: 14px; font-weight: 600; color: #222; }
-        .service-item p { font-size: 12px; color: #777; margin-top: 4px; line-height: 1.6; }
-
-        /* ===== Process ===== */
         .process-steps { display: flex; flex-wrap: wrap; gap: 10px; }
-        .process-step {
-            flex: 1; min-width: calc(50% - 10px); display: flex; align-items: center; gap: 12px;
-            background: #fff; border-radius: var(--radius); padding: 14px; border: 1px solid #eef2f7;
-        }
-        .process-step .step-num { background: var(--primary); color: #fff; width: 28px; height: 28px; border-radius: 50%; text-align: center; line-height: 28px; font-size: 13px; font-weight: 700; flex-shrink: 0; }
-        .process-step .step-text { font-size: 13px; color: #444; }
-        .process-step .step-text small { display: block; font-size: 11px; color: #999; margin-top: 2px; }
+        .process-step { flex: 1; min-width: calc(33% - 10px); display: flex; align-items: center; gap: 10px; background: #fff; border-radius: var(--radius); padding: 12px; border: 1px solid #eef2f7; }
+        .process-step .step-num { background: var(--primary); color: #fff; width: 24px; height: 24px; border-radius: 50%; text-align: center; line-height: 24px; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+        .process-step .step-text { font-size: 12px; color: #444; }
+        .process-step .step-text small { display: block; font-size: 11px; color: #999; }
 
-        /* ===== Cases ===== */
-        .case-item {
-            background: #fff; border-radius: var(--radius); padding: 16px; margin-bottom: 12px;
-            border: 1px solid #eef2f7; border-left: 4px solid var(--primary);
-        }
+        .case-item { background: #fff; border-radius: var(--radius); padding: 16px; margin-bottom: 12px; border: 1px solid #eef2f7; border-left: 4px solid var(--primary); }
         .case-item .case-tag { display: inline-block; background: var(--primary-light); color: var(--primary); padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
         .case-item h4 { font-size: 15px; margin-top: 8px; }
         .case-item p { font-size: 13px; color: #666; margin-top: 4px; line-height: 1.7; }
 
-        /* ===== Products ===== */
         .product-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .product-item {
-            background: #fff; border-radius: var(--radius); padding: 16px; text-align: center;
-            border: 1px solid #eef2f7;
-        }
-        .product-item .product-placeholder {
-            width: 100%; aspect-ratio: 4/3; background: var(--gray); border-radius: 8px;
-            display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 36px;
-        }
+        .product-item { background: #fff; border-radius: var(--radius); padding: 16px; text-align: center; border: 1px solid #eef2f7; }
+        .product-item .product-ph { width: 100%; aspect-ratio: 4/3; background: var(--gray); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 32px; }
         .product-item h4 { font-size: 13px; margin-top: 8px; color: #333; }
         .product-item p { font-size: 11px; color: #999; margin-top: 2px; }
 
-        /* ===== Why Us ===== */
-        .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .why-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
         .why-item { background: #fff; border-radius: var(--radius); padding: 14px; border: 1px solid #eef2f7; text-align: center; }
-        .why-item .icon { font-size: 24px; color: var(--accent); display: block; margin-bottom: 6px; }
-        .why-item h4 { font-size: 13px; font-weight: 600; }
+        .why-item .icon { font-size: 22px; color: var(--accent); display: block; margin-bottom: 4px; }
+        .why-item h4 { font-size: 12px; font-weight: 600; }
         .why-item p { font-size: 11px; color: #888; margin-top: 2px; }
 
-        /* ===== Contact ===== */
-        .contact-card {
-            background: linear-gradient(135deg, #003d7a, #0055aa); color: #fff;
-            border-radius: var(--radius); padding: 24px 20px; text-align: center;
-        }
+        .contact-card { background: linear-gradient(135deg, #003d7a, #0055aa); color: #fff; border-radius: var(--radius); padding: 24px 20px; text-align: center; }
         .contact-card h3 { font-size: 17px; }
         .contact-card .phone { font-size: 24px; font-weight: 800; letter-spacing: 2px; margin: 10px 0 6px; }
         .contact-card .phone a { color: #fff; }
         .contact-card .info { font-size: 13px; opacity: 0.85; line-height: 2; }
-        .contact-card .btn-call {
-            display: inline-block; background: var(--accent); color: #fff; padding: 12px 36px;
-            border-radius: 30px; font-size: 16px; font-weight: 700; margin-top: 14px;
-            transition: transform 0.2s;
-        }
-        .contact-card .btn-call:active { transform: scale(0.96); }
+        .contact-card .btn-call { display: inline-block; background: var(--accent); color: #fff; padding: 12px 36px; border-radius: 30px; font-size: 16px; font-weight: 700; margin-top: 14px; }
 
-        /* ===== Booking Form ===== */
         .form-group { margin-bottom: 14px; }
         .form-group label { display: block; font-size: 13px; font-weight: 600; color: #444; margin-bottom: 5px; }
         .form-group label .required { color: #e74c3c; }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 12px 14px; font-size: 15px;
-            border: 1.5px solid #dce3ec; border-radius: 10px; outline: none; background: #fff;
-            transition: border-color 0.2s; font-family: inherit; -webkit-appearance: none;
-        }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 14px; font-size: 15px; border: 1.5px solid #dce3ec; border-radius: 10px; outline: none; background: #fff; transition: border-color 0.2s; font-family: inherit; -webkit-appearance: none; }
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,85,170,0.1); }
         .form-group textarea { resize: vertical; min-height: 80px; }
         .form-group select { background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat right 14px center; padding-right: 36px; }
-        .submit-btn {
-            width: 100%; padding: 14px; font-size: 17px; font-weight: 700; color: #fff;
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            border: none; border-radius: var(--radius); cursor: pointer; letter-spacing: 2px;
-        }
-        .submit-btn:active { transform: scale(0.97); }
+        .submit-btn { width: 100%; padding: 14px; font-size: 17px; font-weight: 700; color: #fff; background: linear-gradient(135deg, var(--primary-dark), var(--primary)); border: none; border-radius: var(--radius); cursor: pointer; letter-spacing: 2px; }
 
-        /* ===== Footer ===== */
         .footer { background: #1a2332; color: #b0bccd; padding: 28px 20px 20px; margin-top: 24px; text-align: center; }
         .footer .copyright { font-size: 12px; color: #7a879a; }
 
-        /* ===== Modal ===== */
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 999; align-items: center; justify-content: center; padding: 20px; }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center; padding: 20px; }
         .modal-overlay.active { display: flex; }
         .modal-box { background: #fff; border-radius: 16px; padding: 32px 24px; max-width: 340px; width: 100%; text-align: center; animation: modalIn 0.25s ease; }
         @keyframes modalIn { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
@@ -171,15 +119,15 @@
         .modal-box p { font-size: 14px; color: #666; margin-bottom: 20px; line-height: 1.7; }
         .modal-box .btn-ok { display: inline-block; padding: 10px 40px; font-size: 15px; font-weight: 600; color: #fff; background: var(--primary); border: none; border-radius: 10px; cursor: pointer; }
 
-        /* ===== Toast ===== */
         .toast { position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); background: rgba(0,0,0,0.78); color: #fff; padding: 14px 28px; border-radius: 10px; font-size: 15px; z-index: 9999; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
         .toast.show { opacity: 1; }
 
         @media (min-width: 768px) {
             .container { max-width: 800px; }
-            .service-grid, .product-showcase { grid-template-columns: 1fr 1fr 1fr 1fr; }
+            .service-grid { grid-template-columns: 1fr 1fr 1fr; }
             .about-highlights { grid-template-columns: repeat(4, 1fr); }
             .process-step { min-width: calc(25% - 10px); }
+            .product-showcase { grid-template-columns: 1fr 1fr 1fr 1fr; }
             .hero { padding: 60px 30px 48px; }
             .hero h1 { font-size: 30px; }
         }
@@ -187,7 +135,6 @@
 </head>
 <body>
 
-    <!-- ===== Hero ===== -->
     <section class="hero">
         <h1>赣州经济技术开发区<br>怡阳通讯服务店</h1>
         <div class="brand">YIYANG TONGXUN</div>
@@ -202,19 +149,11 @@
 
     <div class="container">
 
-        <!-- ===== 关于我们 ===== -->
+        <!-- 关于 -->
         <div class="section">
             <div class="section-title"><i class="fas fa-building"></i> 关于怡阳</div>
             <div class="card">
-                <p class="about-text">
-                    <strong>怡阳通讯</strong>扎根赣州经济技术开发区，专注弱电智能化建设多年。
-                    我们以<strong>专业的技术、可靠的质量、贴心的服务</strong>，为家庭、商铺、企业、
-                    办公楼等各类场所提供一站式弱电解决方案。
-                </p>
-                <p class="about-text" style="margin-top:10px;">
-                    从方案设计、设备选型到施工安装、售后维护，全程专业把控。
-                    我们深知弱电工程的重要性，每一个项目都精益求精，只为让你用得放心。
-                </p>
+                <p class="about-text"><strong>怡阳通讯</strong>扎根赣州经济技术开发区，专注弱电智能化建设多年。以<strong>专业的技术、可靠的质量、贴心的服务</strong>，为家庭、商铺、企业、办公楼等各类场所提供一站式弱电解决方案。从方案设计、设备选型到施工安装、售后维护，全程专业把控。</p>
                 <div class="about-highlights">
                     <div class="about-highlight"><div class="num">500+</div><div class="label">服务客户</div></div>
                     <div class="about-highlight"><div class="num">8年+</div><div class="label">行业经验</div></div>
@@ -224,195 +163,151 @@
             </div>
         </div>
 
-        <!-- ===== 服务项目 ===== -->
+        <!-- 服务项目（可点击） -->
         <div class="section">
-            <div class="section-title"><i class="fas fa-concierge-bell"></i> 服务项目</div>
+            <div class="section-title"><i class="fas fa-concierge-bell"></i> 服务项目 <span style="font-size:12px;color:#999;font-weight:400;">点击查看详情</span></div>
             <div class="service-grid">
-                <div class="service-item">
+                <div class="service-item" onclick="showDetail(0)">
                     <span class="icon"><i class="fas fa-video"></i></span>
-                    <h3>安防监控</h3>
-                    <p>高清摄像头安装、POE供电、远程查看、NVR存储、手机实时监控</p>
+                    <h3>安防监控系统</h3>
+                    <p>高清摄像头 · POE供电 · 远程查看</p>
                 </div>
-                <div class="service-item">
-                    <span class="icon"><i class="fas fa-code-branch"></i></span>
-                    <h3>网络布线</h3>
-                    <p>弱电布线、光纤熔接、全屋WiFi覆盖、交换机配置、AP组网</p>
+                <div class="service-item" onclick="showDetail(1)">
+                    <span class="icon"><i class="fas fa-wifi"></i></span>
+                    <h3>网络系统</h3>
+                    <p>综合布线 · 全光方案 · WiFi覆盖</p>
                 </div>
-                <div class="service-item">
-                    <span class="icon"><i class="fas fa-tools"></i></span>
-                    <h3>弱电工程</h3>
-                    <p>综合布线、门禁对讲、停车系统、楼宇对讲、配电箱安装调试</p>
+                <div class="service-item" onclick="showDetail(2)">
+                    <span class="icon"><i class="fas fa-car"></i></span>
+                    <h3>停车场系统</h3>
+                    <p>车牌识别 · 道闸 · 车位引导</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" onclick="showDetail(3)">
+                    <span class="icon"><i class="fas fa-city"></i></span>
+                    <h3>小区可视化系统</h3>
+                    <p>楼宇对讲 · 门禁 · 物业联网</p>
+                </div>
+                <div class="service-item" onclick="showDetail(4)">
+                    <span class="icon"><i class="fas fa-phone-alt"></i></span>
+                    <h3>电话/广播系统</h3>
+                    <p>IP电话 · 公共广播 · 背景音乐</p>
+                </div>
+                <div class="service-item" onclick="showDetail(5)">
+                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                    <h3>光纤/全光方案</h3>
+                    <p>光纤入户 · FTTR · 全光组网</p>
+                </div>
+                <div class="service-item" onclick="showDetail(6)">
+                    <span class="icon"><i class="fas fa-lock"></i></span>
+                    <h3>门禁考勤系统</h3>
+                    <p>指纹/人脸 · 刷卡 · 联网管理</p>
+                </div>
+                <div class="service-item" onclick="showDetail(7)">
+                    <span class="icon"><i class="fas fa-tasks"></i></span>
+                    <h3>综合布线工程</h3>
+                    <p>弱电施工 · 桥架管线 · 机柜安装</p>
+                </div>
+                <div class="service-item" onclick="showDetail(8)">
                     <span class="icon"><i class="fas fa-microchip"></i></span>
                     <h3>智能系统集成</h3>
-                    <p>智能家居、智慧安防、工地监控、办公楼智能化方案实施</p>
+                    <p>智慧工地 · 智能家居 · 系统对接</p>
                 </div>
             </div>
         </div>
 
-        <!-- ===== 服务流程 ===== -->
+        <!-- 服务流程 -->
         <div class="section">
             <div class="section-title"><i class="fas fa-list-check"></i> 服务流程</div>
             <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-num">1</div>
-                    <div class="step-text"><strong>在线预约</strong><small>提交需求，我们主动联系</small></div>
-                </div>
-                <div class="process-step">
-                    <div class="step-num">2</div>
-                    <div class="step-text"><strong>免费勘测</strong><small>上门测量、了解需求</small></div>
-                </div>
-                <div class="process-step">
-                    <div class="step-num">3</div>
-                    <div class="step-text"><strong>方案报价</strong><small>出具方案和报价单</small></div>
-                </div>
-                <div class="process-step">
-                    <div class="step-num">4</div>
-                    <div class="step-text"><strong>专业施工</strong><small>规范布线、设备安装调试</small></div>
-                </div>
-                <div class="process-step">
-                    <div class="step-num">5</div>
-                    <div class="step-text"><strong>验收交付</strong><small>现场测试、功能演示</small></div>
-                </div>
-                <div class="process-step">
-                    <div class="step-num">6</div>
-                    <div class="step-text"><strong>售后维护</strong><small>终身技术支持、快速上门</small></div>
-                </div>
+                <div class="process-step"><div class="step-num">1</div><div class="step-text"><strong>在线预约</strong><small>提交需求</small></div></div>
+                <div class="process-step"><div class="step-num">2</div><div class="step-text"><strong>免费勘测</strong><small>上门测量</small></div></div>
+                <div class="process-step"><div class="step-num">3</div><div class="step-text"><strong>方案报价</strong><small>出具方案</small></div></div>
+                <div class="process-step"><div class="step-num">4</div><div class="step-text"><strong>专业施工</strong><small>安装调试</small></div></div>
+                <div class="process-step"><div class="step-num">5</div><div class="step-text"><strong>验收交付</strong><small>测试演示</small></div></div>
+                <div class="process-step"><div class="step-num">6</div><div class="step-text"><strong>售后维护</strong><small>终身支持</small></div></div>
             </div>
         </div>
 
-        <!-- ===== 产品展示 ===== -->
+        <!-- 产品 -->
         <div class="section">
             <div class="section-title"><i class="fas fa-boxes"></i> 常用设备</div>
             <div class="product-showcase">
-                <div class="product-item">
-                    <div class="product-placeholder"><i class="fas fa-camera"></i></div>
-                    <h4>海康威视摄像头</h4>
-                    <p>200万/400万高清<br>夜视红外 POE供电</p>
-                </div>
-                <div class="product-item">
-                    <div class="product-placeholder"><i class="fas fa-hdd"></i></div>
-                    <h4>硬盘录像机 NVR</h4>
-                    <p>4路/8路/16路<br>远程查看 手机APP</p>
-                </div>
-                <div class="product-item">
-                    <div class="product-placeholder"><i class="fas fa-wifi"></i></div>
-                    <h4>无线AP路由器</h4>
-                    <p>全屋WiFi覆盖<br>千兆端口 穿墙强</p>
-                </div>
-                <div class="product-item">
-                    <div class="product-placeholder"><i class="fas fa-plug"></i></div>
-                    <h4>POE交换机</h4>
-                    <p>5口/8口/16口<br>即插即用 稳定供电</p>
-                </div>
+                <div class="product-item"><div class="product-ph"><i class="fas fa-camera"></i></div><h4>海康威视摄像头</h4><p>200万/400万 POE</p></div>
+                <div class="product-item"><div class="product-ph"><i class="fas fa-hdd"></i></div><h4>硬盘录像机 NVR</h4><p>4-16路 远程查看</p></div>
+                <div class="product-item"><div class="product-ph"><i class="fas fa-wifi"></i></div><h4>无线AP/路由器</h4><p>全屋WiFi 千兆</p></div>
+                <div class="product-item"><div class="product-ph"><i class="fas fa-plug"></i></div><h4>POE交换机</h4><p>5-16口 稳定供电</p></div>
             </div>
         </div>
 
-        <!-- ===== 案例展示 ===== -->
+        <!-- 案例 -->
         <div class="section">
             <div class="section-title"><i class="fas fa-trophy"></i> 近期案例</div>
             <div class="case-item">
                 <span class="case-tag">安防监控</span>
                 <h4>赣州某小区地下停车场监控系统</h4>
-                <p>部署海康200万高清摄像头36台，实现全覆盖无死角监控，配合NVR集中存储，物业通过手机即可远程查看。</p>
+                <p>部署海康200万高清摄像头36台，全覆盖无死角，NVR集中存储，手机远程查看。</p>
             </div>
             <div class="case-item">
-                <span class="case-tag">网络布线</span>
+                <span class="case-tag">综合布线</span>
                 <h4>经开区某办公楼网络改造</h4>
-                <p>6类网线布线80个点位，光纤主干接入，部署企业级AC+AP实现全楼无缝WiFi覆盖，网速提升300%。</p>
+                <p>六类网线80点位，光纤主干接入，AC+AP全覆盖，网速提升300%。</p>
             </div>
             <div class="case-item">
                 <span class="case-tag">弱电工程</span>
                 <h4>某商铺安防+门禁+收银系统集成</h4>
-                <p>监控、门禁、收银网络三合一综合布线，降低施工成本30%，后期维护更便捷。</p>
+                <p>监控、门禁、收银网络三合一综合布线，降低施工成本30%。</p>
             </div>
         </div>
 
-        <!-- ===== 为什么选我们 ===== -->
+        <!-- 优势 -->
         <div class="section">
             <div class="section-title"><i class="fas fa-star"></i> 为什么选怡阳</div>
             <div class="why-grid">
-                <div class="why-item">
-                    <span class="icon"><i class="fas fa-user-tie"></i></span>
-                    <h4>专业团队</h4>
-                    <p>经验丰富，持证上岗</p>
-                </div>
-                <div class="why-item">
-                    <span class="icon"><i class="fas fa-ruler-combined"></i></span>
-                    <h4>规范施工</h4>
-                    <p>布线整齐，工艺标准</p>
-                </div>
-                <div class="why-item">
-                    <span class="icon"><i class="fas fa-tag"></i></span>
-                    <h4>价格透明</h4>
-                    <p>明码实价，无隐藏费用</p>
-                </div>
-                <div class="why-item">
-                    <span class="icon"><i class="fas fa-headset"></i></span>
-                    <h4>售后无忧</h4>
-                    <p>质保期内免费上门</p>
-                </div>
-                <div class="why-item">
-                    <span class="icon"><i class="fas fa-bolt"></i></span>
-                    <h4>快速响应</h4>
-                    <p>预约后2小时内联系</p>
-                </div>
-                <div class="why-item">
-                    <span class="icon"><i class="fas fa-shield"></i></span>
-                    <h4>正品保障</h4>
-                    <p>海康、TP-Link等授权</p>
-                </div>
+                <div class="why-item"><span class="icon"><i class="fas fa-user-tie"></i></span><h4>专业团队</h4><p>经验丰富</p></div>
+                <div class="why-item"><span class="icon"><i class="fas fa-ruler-combined"></i></span><h4>规范施工</h4><p>工艺标准</p></div>
+                <div class="why-item"><span class="icon"><i class="fas fa-tag"></i></span><h4>价格透明</h4><p>明码实价</p></div>
+                <div class="why-item"><span class="icon"><i class="fas fa-headset"></i></span><h4>售后无忧</h4><p>质保上门</p></div>
+                <div class="why-item"><span class="icon"><i class="fas fa-bolt"></i></span><h4>快速响应</h4><p>2h联系</p></div>
+                <div class="why-item"><span class="icon"><i class="fas fa-shield"></i></span><h4>正品保障</h4><p>品牌授权</p></div>
             </div>
         </div>
 
-        <!-- ===== 联系我们 ===== -->
+        <!-- 联系 -->
         <div class="section">
             <div class="section-title"><i class="fas fa-phone-alt"></i> 联系我们</div>
             <div class="contact-card">
                 <h3><i class="fas fa-comments"></i> 免费咨询 · 上门勘测</h3>
                 <div class="phone"><a href="tel:18107070735">18107070735</a></div>
-                <div class="info">
-                    <i class="fas fa-map-marker-alt"></i> 赣州经济技术开发区和信广场D栋<br>
-                    <i class="fas fa-clock"></i> 营业时间：周一至周日 8:00-18:00
-                </div>
+                <div class="info"><i class="fas fa-map-marker-alt"></i> 赣州经济技术开发区和信广场D栋<br><i class="fas fa-clock"></i> 周一至周日 8:00-18:00</div>
                 <a href="tel:18107070735" class="btn-call"><i class="fas fa-phone-alt"></i> 立即拨打</a>
             </div>
         </div>
 
-        <!-- ===== 在线预约 ===== -->
+        <!-- 预约 -->
         <div class="section">
             <div class="section-title"><i class="fas fa-calendar-check"></i> 在线预约</div>
             <div class="card">
-                <p style="font-size:13px;color:#888;margin-bottom:14px;">填写以下信息，我们将在2小时内联系您</p>
+                <p style="font-size:13px;color:#888;margin-bottom:14px;">填写信息，2小时内联系您</p>
                 <form id="bookingForm" action="https://formspree.io/f/xjkyqwjw" method="POST">
-                    <div class="form-group">
-                        <label>姓名 <span class="required">*</span></label>
-                        <input type="text" name="name" placeholder="请输入您的姓名" required>
-                    </div>
-                    <div class="form-group">
-                        <label>手机号 <span class="required">*</span></label>
-                        <input type="tel" name="phone" placeholder="请输入您的手机号码" required>
-                    </div>
-                    <div class="form-group">
-                        <label>服务类型 <span class="required">*</span></label>
+                    <div class="form-group"><label>姓名 <span class="required">*</span></label><input type="text" name="name" placeholder="请输入您的姓名" required></div>
+                    <div class="form-group"><label>手机号 <span class="required">*</span></label><input type="tel" name="phone" placeholder="请输入您的手机号码" required></div>
+                    <div class="form-group"><label>服务类型 <span class="required">*</span></label>
                         <select name="serviceType" required>
                             <option value="">请选择服务类型</option>
-                            <option value="安防监控安装">安防监控安装</option>
-                            <option value="网络布线">网络布线</option>
-                            <option value="弱电工程">弱电工程</option>
+                            <option value="安防监控系统">安防监控系统</option>
+                            <option value="网络系统">网络系统</option>
+                            <option value="停车场系统">停车场系统</option>
+                            <option value="小区可视化系统">小区可视化系统</option>
+                            <option value="电话/广播系统">电话/广播系统</option>
+                            <option value="光纤/全光方案">光纤/全光方案</option>
+                            <option value="门禁考勤系统">门禁考勤系统</option>
+                            <option value="综合布线工程">综合布线工程</option>
                             <option value="智能系统集成">智能系统集成</option>
                             <option value="其他服务">其他服务</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>需求描述</label>
-                        <textarea name="desc" placeholder="请简要描述您的需求，如：安装位置、数量、预算范围等"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>期望上门时间</label>
-                        <input type="date" name="expectedDate">
-                    </div>
+                    <div class="form-group"><label>需求描述</label><textarea name="desc" placeholder="请简要描述您的需求"></textarea></div>
+                    <div class="form-group"><label>期望上门时间</label><input type="date" name="expectedDate"></div>
                     <input type="hidden" name="_subject" value="怡阳通讯 - 新服务预约">
                     <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> 提交预约 · 免费勘测</button>
                 </form>
@@ -421,7 +316,12 @@
 
     </div>
 
-    <!-- ===== Modal ===== -->
+    <!-- 服务详情弹窗 -->
+    <div class="detail-overlay" id="detailOverlay" onclick="if(event.target===this)closeDetail()">
+        <div class="detail-box" id="detailBox"></div>
+    </div>
+
+    <!-- 成功弹窗 -->
     <div class="modal-overlay" id="successModal">
         <div class="modal-box">
             <span class="icon"><i class="fas fa-check-circle"></i></span>
@@ -431,61 +331,171 @@
         </div>
     </div>
 
-    <!-- ===== Footer ===== -->
     <footer class="footer">
-        <div class="copyright">
-            &copy; 2026 赣州经济技术开发区怡阳通讯服务店<br>
-            用心服务，专业品质
-        </div>
+        <div class="copyright">&copy; 2026 赣州经济技术开发区怡阳通讯服务店<br>用心服务，专业品质</div>
     </footer>
 
     <div class="toast" id="toast"></div>
 
     <script>
-        const modal = document.getElementById('successModal');
-        const form = document.getElementById('bookingForm');
-
-        function showToast(msg) {
-            const t = document.getElementById('toast');
-            t.textContent = msg;
-            t.classList.add('show');
-            setTimeout(() => t.classList.remove('show'), 2500);
-        }
-        function closeModal() { modal.classList.remove('active'); }
-
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const name = form.name.value.trim();
-            const phone = form.phone.value.trim();
-            const service = form.serviceType.value;
-
-            if (!name) { showToast('请输入您的姓名'); form.name.focus(); return; }
-            if (!phone || !/1\d{10}/.test(phone)) { showToast('请输入正确的手机号码'); form.phone.focus(); return; }
-            if (!service) { showToast('请选择服务类型'); return; }
-
-            const btn = form.querySelector('.submit-btn');
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 提交中...';
-
-            try {
-                const data = new FormData(form);
-                const resp = await fetch('https://formspree.io/f/xjkyqwjw', {
-                    method: 'POST', body: data,
-                    headers: { 'Accept': 'application/json' }
-                });
-                if (resp.ok) { modal.classList.add('active'); form.reset(); }
-                else { showToast('提交失败，请直接致电 18107070735'); }
-            } catch(e) {
-                showToast('网络异常，请直接致电 18107070735');
+        const services = [
+            {
+                icon: 'fa-video',
+                title: '安防监控系统',
+                desc: '提供从家庭到企业级的全方位安防监控解决方案。采用海康威视、大华等一线品牌设备，确保画面清晰、系统稳定。支持手机远程实时查看，随时随地掌握现场情况。',
+                features: [
+                    '高清摄像头安装（200万/400万/500万像素）',
+                    'POE供电，一条网线搞定数据传输和供电',
+                    'NVR硬盘录像机，支持7×24小时不间断录像',
+                    '手机APP远程查看，随时随地监控',
+                    '夜视红外功能，无光环境也能清晰成像',
+                    '智能移动侦测报警，异常情况实时推送'
+                ],
+                price: '方案一：家庭4路监控 约2800元起 | 方案二：商铺8路监控 约4800元起'
+            },
+            {
+                icon: 'fa-wifi',
+                title: '网络系统',
+                desc: '从家庭千兆网络到企业级网络全覆盖，提供有线+无线一体化解决方案。支持光纤入户、AC+AP组网、Mesh组网等多种方案，确保信号无死角、速度不衰减。',
+                features: [
+                    '家庭/办公室综合网络布线（超五类/六类网线）',
+                    '全屋WiFi覆盖（AC+AP方案，无缝漫游）',
+                    '企业级路由器+交换机配置调试',
+                    '光纤入户/FTTR全光组网解决方案',
+                    '网线+AP点位定制，按需部署',
+                    '网络故障排查、网络优化提速'
+                ],
+                price: '家庭WiFi覆盖 约800-3000元 | 企业网络布线 按点位计费约200元/点位起'
+            },
+            {
+                icon: 'fa-car',
+                title: '停车场管理系统',
+                desc: '提供车牌识别、道闸控制、车位引导等一体化停车场解决方案。适用于小区、商场、写字楼、医院等各类停车场场景，支持无人值守、移动支付。',
+                features: [
+                    '车牌识别系统，无需取卡自动通行',
+                    '智能道闸安装（直杆/栅栏/广告道闸）',
+                    '车位引导系统，实时显示空余车位',
+                    '微信/支付宝扫码支付，支持无感支付',
+                    '云平台管理，远程监控停车场状态',
+                    '月租车管理、临时车计费、特殊车辆白名单'
+                ],
+                price: '单车道车牌识别 约8000元起 | 双车道+道闸 约15000元起（含安装）'
+            },
+            {
+                icon: 'fa-city',
+                title: '小区可视化系统',
+                desc: '为住宅小区提供全面的智能化管理解决方案。整合楼宇对讲、门禁管理、视频监控、物业管理等功能，实现小区的智能化、可视化运营管理。',
+                features: [
+                    '楼宇对讲系统（可视/非可视）安装调试',
+                    '人脸识别门禁系统，刷脸进出',
+                    '单元门/小区大门智能门禁联网管理',
+                    '小区视频监控全覆盖（周界、主干道、电梯）',
+                    '物业管理后台，统一管理所有设备',
+                    '业主APP/小程序，访客邀请远程开门'
+                ],
+                price: '按项目定制，详询 '
+            },
+            {
+                icon: 'fa-phone-alt',
+                title: '电话/广播系统',
+                desc: '提供IP电话系统、公共广播系统、背景音乐系统等弱电音视频解决方案。适用于办公楼、酒店、商场、学校、工厂等场景。',
+                features: [
+                    'IP电话交换机安装调试（SIP协议）',
+                    '集团电话系统，内线免费互打',
+                    '公共广播系统（背景音乐+紧急广播）',
+                    '消防联动广播系统安装',
+                    '会议室音视频系统集成',
+                    '商场/超市背景音乐+寻呼系统'
+                ],
+                price: 'IP电话系统 约2000元起（含10门）| 广播系统 按面积定制'
+            },
+            {
+                icon: 'fa-tachometer-alt',
+                title: '光纤/全光方案',
+                desc: '提供全面的光纤通信解决方案，从光纤入户到全光组网（FTTR），满足高速率、低延迟、长距离传输需求。适用于家庭、企业、园区等场景。',
+                features: [
+                    '光纤入户（FTTH）施工熔接',
+                    '全光组网（FTTR），千兆到每个房间',
+                    '光纤布线+终端设备安装调试',
+                    '光纤熔接、冷接、测试',
+                    '弱电间/弱电井光纤配线架安装',
+                    '机房光纤跳线整理、标识标准化'
+                ],
+                price: '光纤入户 约1500元起 | FTTR全光组网 约3000元起（三室一厅）'
+            },
+            {
+                icon: 'fa-lock',
+                title: '门禁考勤系统',
+                desc: '提供指纹、人脸、刷卡、密码等多种方式的门禁考勤解决方案。适用于公司、工厂、学校、写字楼等需要人员出入管理和考勤统计的场景。',
+                features: [
+                    '人脸识别门禁机安装调试',
+                    '指纹/刷卡/密码一体门禁安装',
+                    '联网门禁系统，远程开关门',
+                    '考勤管理系统，自动生成报表',
+                    '电控锁/电磁锁/玻璃门锁安装',
+                    '多门互锁、消防联动功能'
+                ],
+                price: '单门人脸门禁 约1500元起 | 联网考勤系统 约3000元起（含10人）'
+            },
+            {
+                icon: 'fa-tasks',
+                title: '综合布线工程',
+                desc: '提供从设计到施工的全套弱电综合布线服务。包括桥架管线铺设、网线电话线布放、机柜安装、标签标识等标准化施工，确保系统长期稳定可靠。',
+                features: [
+                    '弱电桥架/线槽/管线铺设安装',
+                    '超五类/六类网线布放、端接、测试',
+                    '电话线/广播线/控制线布放',
+                    '标准机柜安装、理线、配线架端接',
+                    '标签打印标识，施工文档交付',
+                    '弱电间/弱电井标准化整治'
+                ],
+                price: '按点位报价：网线 约200元/点位起 | 桥架管线另计'
+            },
+            {
+                icon: 'fa-microchip',
+                title: '智能系统集成',
+                desc: '提供智慧工地、智能家居、系统对接等智能化整体解决方案。将安防、网络、门禁、照明、环境监测等子系统整合到一个平台，实现集中管理、智能联动。',
+                features: [
+                    '智慧工地解决方案（视频监控+扬尘+考勤）',
+                    '智能家居系统（灯光/窗帘/空调/安防联动）',
+                    '老旧设备智能化改造升级',
+                    '多系统对接集成（监控+门禁+报警联动）',
+                    '云平台部署，随时随地远程管理',
+                    '定制化软件开发，满足特殊需求'
+                ],
+                price: '按项目定制，详询 18107070735'
             }
-            btn.disabled = false;
-            btn.innerHTML = '<i class="fas fa-paper-plane"></i> 提交预约 · 免费勘测';
-        });
+        ];
 
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) closeModal();
-        });
-    </script>
+        function showDetail(idx) {
+            const s = services[idx];
+            const box = document.getElementById('detailBox');
+            box.innerHTML = `
+                <div class="detail-header">
+                    <span class="close-btn" onclick="closeDetail()">&times;</span>
+                    <span class="icon-big"><i class="fas ${s.icon}"></i></span>
+                    <h2>${s.title}</h2>
+                </div>
+                <div class="detail-body">
+                    <p class="desc">${s.desc}</p>
+                    <div class="sub-title"><i class="fas fa-check-circle"></i> 服务内容</div>
+                    <ul class="feature-list">
+                        ${s.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}
+                    </ul>
+                    <div class="price-box">
+                        <i class="fas fa-tag"></i> 参考价格<br>
+                        <span>${s.price}</span>
+                    </div>
+                </div>
+                <div class="detail-footer">
+                    <a href="tel:18107070735" class="btn-consult"><i class="fas fa-phone-alt"></i> 致电咨询 18107070735</a>
+                </div>
+            `;
+            document.getElementById('detailOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
-</body>
-</html>
+        function closeDetail() {
+            document.getElementById('detailOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
