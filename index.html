@@ -12,16 +12,14 @@
         .container{max-width:1100px;margin:0 auto;padding:0 16px}
 
         /* ===== Logo ===== */
-        .logo-wrap{text-align:center;padding:32px 16px 0;background:linear-gradient(180deg,#003366 0%,#004b99 40%,#e8f2ff 100%)}
-        .logo-main{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:16px 32px;border-radius:20px;margin-bottom:20px}
-        .logo-main .logo-icon{width:58px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#f0f4f8;border:1px solid #e0e7ef}
-        .logo-main .text{text-align:left}
-        .logo-main .text .name{font-size:26px;font-weight:900;color:#fff;letter-spacing:3px}
-        .logo-main .text .name span{color:#f39c12}
-        .logo-main .text .sub{font-size:12px;color:rgba(255,255,255,.7);letter-spacing:2px;margin-top:2px}
-        .logo-main .text .sub i{color:#f39c12;margin-right:3px;font-size:10px}
+        .logo-wrap{text-align:center;padding:40px 16px 0;background:linear-gradient(180deg,#003366 0%,#004b99 40%,#e8f2ff 100%)}
+        
 
-        .hero{background:linear-gradient(180deg,#003366 0%,#004b99 40%,#e8f2ff 100%);text-align:center;padding:0 16px 40px}
+        
+        .logo-text{display:inline-flex;align-items:baseline;gap:8px;position:relative;margin-bottom:8px}
+        .logo-mark{font-size:42px;font-weight:900;color:#fff;letter-spacing:6px;text-shadow:0 2px 10px rgba(0,0,0,.2);line-height:1}
+        .logo-mark-sub{font-size:20px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:4px;line-height:1.2;border-left:1px solid rgba(255,255,255,.2);padding-left:10px}
+        .logo-tagline{font-size:13px;color:rgba(255,255,255,.6);letter-spacing:3px;margin-bottom:16px}.hero{background:linear-gradient(180deg,#003366 0%,#004b99 40%,#e8f2ff 100%);text-align:center;padding:0 16px 40px}
         .hero .hl{display:inline-flex;gap:6px;flex-wrap:wrap;justify-content:center;background:#fff;color:#003366;padding:12px 24px;border-radius:12px;font-size:17px;font-weight:700;margin-top:4px;box-shadow:0 4px 20px rgba(0,51,102,.15)}
         .hero .hl span{background:#e8f2ff;padding:2px 10px;border-radius:6px;font-size:15px}
         .hero .sub{padding:14px 20px;background:#fff;border-radius:12px;margin-top:16px;font-size:14px;color:#555;line-height:1.9;box-shadow:0 2px 12px rgba(0,0,0,.06);text-align:left;max-width:400px;margin-left:auto;margin-right:auto}
@@ -106,29 +104,11 @@
 <body>
 
     <div class="logo-wrap">
-        <div class="logo-main">
-            <div class="logo-icon">
-                <svg viewBox="0 0 48 48" width="48" height="48">
-                    <defs>
-                        <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1"/>
-                            <stop offset="100%" style="stop-color:#e74c3c;stop-opacity:1"/>
-                        </linearGradient>
-                    </defs>
-                    <rect x="0" y="0" width="48" height="48" rx="12" fill="url(#lg)" opacity="0.12"/>
-                    <polygon points="24,8 30,22 24,18 18,22" fill="#f39c12"/>
-                    <polygon points="24,8 30,22 24,18 18,22" fill="#f39c12" opacity="0.5" transform="translate(0,12)"/>
-                    <circle cx="24" cy="12" r="5" fill="#fff" opacity="0.95"/>
-                    <circle cx="17" cy="28" r="4" fill="#f39c12" opacity="0.3"/>
-                    <circle cx="31" cy="28" r="4" fill="#f39c12" opacity="0.3"/>
-                    <circle cx="24" cy="36" r="6" fill="#f39c12" opacity="0.15"/>
-                </svg>
-            </div>
-            <div class="text">
-                <div class="name">怡阳通讯</div>
-                <div class="sub"><i class="fas fa-circle"></i> 弱电智能化 · 工程服务商</div>
-            </div>
+        <div class="logo-text">
+            <div class="logo-mark">怡阳</div>
+            <div class="logo-mark-sub">通讯</div>
         </div>
+        <div class="logo-tagline">弱电智能化 · 工程服务商</div>
         <div class="hero">
             <div class="hl">
                 <span>安防监控</span>
