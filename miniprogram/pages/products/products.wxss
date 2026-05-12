@@ -1,21 +1,36 @@
+/* pages/products/products.wxss */
 .page{padding-bottom:20px;background:#f0f4f8;min-height:100vh}
 .section{background:#fff;border-radius:16px;margin:10px 16px;padding:20px 16px}
 .section-title{font-size:16px;font-weight:700;color:#003366;margin-bottom:14px;display:flex;align-items:center;gap:6px}
 .title-icon{font-size:18px}
-.brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.brand-item{text-align:center;padding:16px 8px;background:#f2f6fc;border-radius:12px}
-.brand-name{font-size:16px;font-weight:800;display:block}
-.brand-desc{font-size:11px;color:#888;margin-top:4px;display:block}
-.brand-section{margin:0 16px 12px}
-.brand-header{padding:16px 16px 12px;background:#fff;border-radius:16px 16px 0 0}
-.brand-title{font-size:18px;font-weight:800;display:block}
-.brand-sub{font-size:11px;color:#999;display:block;margin-top:2px}
-.product-card{display:flex;gap:12px;background:#fff;border-top:1px solid #f0f0f0;padding:14px 16px}
-.product-card:last-child{border-radius:0 0 16px 16px;margin-bottom:16px}
-.product-icon{font-size:28px;width:44px;height:44px;background:#f2f6fc;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.product-info{flex:1}
-.product-name{font-size:14px;font-weight:600;color:#1a2332;display:block}
-.product-model{font-size:11px;color:#003366;font-weight:500;margin-top:1px;display:block}
-.product-desc{font-size:12px;color:#666;margin-top:2px;display:block;line-height:1.5}
-.product-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
-.mini-tag{background:#e8f2ff;color:#004b99;padding:2px 8px;border-radius:8px;font-size:10px}
+
+/* Brand chips */
+.brand-scroll{display:flex;flex-wrap:wrap;gap:8px}
+.brand-chip{padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;border:1.5px solid;background:#fff}
+
+/* Category sections */
+.category-section{margin:0 16px 12px}
+.category-header{padding:16px;background:#fff;border-radius:16px 16px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.category-icon{font-size:24px}
+.category-name{font-size:16px;font-weight:700;color:#003366}
+.brand-chips{display:flex;gap:4px;flex-wrap:wrap;width:100%;margin-top:4px}
+.chip{background:#e8f2ff;color:#0055aa;padding:2px 8px;border-radius:8px;font-size:10px}
+
+/* Spec cards */
+.spec-card{background:#fff;border-top:1px solid #f0f0f0;padding:14px 16px}
+.spec-card:last-child{border-radius:0 0 16px 16px;margin-bottom:12px}
+.spec-header{display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap}
+.spec-type{font-size:15px;font-weight:700;color:#1a2332;min-width:70px}
+.spec-specs{display:flex;gap:4px;flex-wrap:wrap}
+.spec-tag{background:#f39c12;color:#fff;padding:2px 10px;border-radius:10px;font-size:11px;font-weight:500}
+.spec-desc{font-size:12px;color:#666;margin-top:6px;display:block;line-height:1.6}
+.spec-power{font-size:11px;color:#0055aa;font-weight:500;margin-top:3px;display:block}
+
+/* Others */
+.other-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #f0f0f0}
+.other-item:last-child{border-bottom:none}
+.other-icon{font-size:24px;width:40px;height:40px;background:#f2f6fc;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.other-info{flex:1}
+.other-name{font-size:14px;font-weight:600;color:#1a2332;display:block}
+.other-brand{font-size:11px;color:#0055aa;margin-top:1px;display:block}
+.other-desc{font-size:12px;color:#888;margin-top:2px;display:block}
