@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/webview/webview",
+    "pages/service/service",
+    "pages/cases/cases",
+    "pages/about/about"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#003366",
+    "navigationBarTitleText": "怡阳通讯",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f0f4f8"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#003366",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_active.png"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "text": "服务",
+        "iconPath": "images/service.png",
+        "selectedIconPath": "images/service_active.png"
+      },
+      {
+        "pagePath": "pages/cases/cases",
+        "text": "案例",
+        "iconPath": "images/cases.png",
+        "selectedIconPath": "images/cases_active.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath": "images/about.png",
+        "selectedIconPath": "images/about_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
