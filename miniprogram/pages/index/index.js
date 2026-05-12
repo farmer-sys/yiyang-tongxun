@@ -5,38 +5,38 @@ Page({
   data: {
     phone: app.globalData.phone,
     services: [
-      { id: 'anjian', icon: '📹', name: '安防监控', desc: '海康大华·POE', url: '/pages/webview/webview?goto=anjian' },
-      { id: 'wangluo', icon: '📶', name: '网络·全光', desc: '华为FTTR·锐捷AP', url: '/pages/webview/webview?goto=wangluo' },
-      { id: 'shengguang', icon: '🎵', name: '声光系统', desc: '音响灯光·LED大屏', url: '/pages/webview/webview?goto=shengguang' },
-      { id: 'tingche', icon: '🚗', name: '停车场', desc: '车牌识别·道闸', url: '/pages/webview/webview?goto=tingche' },
-      { id: 'xiaofang', icon: '🔥', name: '智慧消防', desc: '联动·智慧平台', url: '/pages/webview/webview?goto=xiaofang' },
-      { id: 'menjin', icon: '🔒', name: '门禁·对讲·广播', desc: '人脸·IP电话', url: '/pages/webview/webview?goto=menjin' },
-      { id: 'jicheng', icon: '💡', name: '智能化集成', desc: '客控·家居·工地', url: '/pages/webview/webview?goto=jicheng' },
-      { id: 'buxian', icon: '🔧', name: '综合布线', desc: '桥架·光纤·机柜', url: '/pages/webview/webview?goto=buxian' },
+      { id: 'anjian', icon: '馃摴', name: '瀹夐槻鐩戞帶', desc: '娴峰悍澶у崕路POE', url: '/pages/webview/webview?goto=anjian' },
+      { id: 'wangluo', icon: '馃摱', name: '缃戠粶路鍏ㄥ厜', desc: '鍗庝负FTTR路閿愭嵎AP', url: '/pages/webview/webview?goto=wangluo' },
+      { id: 'shengguang', icon: '馃幍', name: '澹板厜绯荤粺', desc: '闊冲搷鐏厜路LED澶у睆', url: '/pages/webview/webview?goto=shengguang' },
+      { id: 'tingche', icon: '馃殫', name: '鍋滆溅鍦?, desc: '杞︾墝璇嗗埆路閬撻椄', url: '/pages/webview/webview?goto=tingche' },
+      { id: 'xiaofang', icon: '馃敟', name: '鏅烘収娑堥槻', desc: '鑱斿姩路鏅烘収骞冲彴', url: '/pages/webview/webview?goto=xiaofang' },
+      { id: 'menjin', icon: '馃敀', name: '闂ㄧ路瀵硅路骞挎挱', desc: '浜鸿劯路IP鐢佃瘽', url: '/pages/webview/webview?goto=menjin' },
+      { id: 'jicheng', icon: '馃挕', name: '鏅鸿兘鍖栭泦鎴?, desc: '瀹㈡帶路瀹跺眳路宸ュ湴', url: '/pages/webview/webview?goto=jicheng' },
+      { id: 'buxian', icon: '馃敡', name: '缁煎悎甯冪嚎', desc: '妗ユ灦路鍏夌氦路鏈烘煖', url: '/pages/webview/webview?goto=buxian' },
     ],
     cases: [
       {
-        id: 1, title: '瑞金天沐温泉酒店', tag: '弱电总包', tagClass: 'tag-orange',
-        desc: '五星级温泉度假酒店全智能化弱电建设',
-        stats: ['300路监控', '100+ AP', '270间客房', '1000㎡声光'],
+        id: 1, title: '鐟為噾澶╂矏娓╂硥閰掑簵', tag: '寮辩數鎬诲寘', tagClass: 'tag-orange',
+        desc: '浜旀槦绾ф俯娉夊害鍋囬厭搴楀叏鏅鸿兘鍖栧急鐢靛缓璁?,
+        stats: ['300璺洃鎺?, '100+ AP', '270闂村鎴?, '1000銕″０鍏?],
         url: '/pages/webview/webview?goto=ruijin'
       },
       {
-        id: 2, title: '赣南医科大学', tag: '智慧消防', tagClass: 'tag-blue',
-        desc: '高校多栋楼宇智慧消防系统建设',
-        stats: ['多栋楼宇覆盖', '云平台实时监控', '三级告警联动'],
+        id: 2, title: '璧ｅ崡鍖荤澶у', tag: '鏅烘収娑堥槻', tagClass: 'tag-blue',
+        desc: '楂樻牎澶氭爧妤煎畤鏅烘収娑堥槻绯荤粺寤鸿',
+        stats: ['澶氭爧妤煎畤瑕嗙洊', '浜戝钩鍙板疄鏃剁洃鎺?, '涓夌骇鍛婅鑱斿姩'],
         url: '/pages/webview/webview?goto=gnykdx'
       },
       {
-        id: 3, title: '多家快递公司站点监控', tag: '快递物流', tagClass: 'tag-blue',
-        desc: '赣州多个区县快递分拣中心及营业网点监控覆盖',
-        stats: ['多站点覆盖', '45天+存储', '远程APP巡查'],
+        id: 3, title: '澶氬蹇€掑叕鍙哥珯鐐圭洃鎺?, tag: '蹇€掔墿娴?, tagClass: 'tag-blue',
+        desc: '璧ｅ窞澶氫釜鍖哄幙蹇€掑垎鎷ｄ腑蹇冨強钀ヤ笟缃戠偣鐩戞帶瑕嗙洊',
+        stats: ['澶氱珯鐐硅鐩?, '45澶?瀛樺偍', '杩滅▼APP宸℃煡'],
         url: '/pages/webview/webview?goto=kuaidi'
       },
       {
-        id: 4, title: '多家企业内网搭建及监控', tag: '企业网络', tagClass: 'tag-orange',
-        desc: '经开区及周边企业内网规划与安防建设',
-        stats: ['VLAN网段隔离', 'AC+AP全覆盖', '30分钟响应'],
+        id: 4, title: '澶氬浼佷笟鍐呯綉鎼缓鍙婄洃鎺?, tag: '浼佷笟缃戠粶', tagClass: 'tag-orange',
+        desc: '缁忓紑鍖哄強鍛ㄨ竟浼佷笟鍐呯綉瑙勫垝涓庡畨闃插缓璁?,
+        stats: ['VLAN缃戞闅旂', 'AC+AP鍏ㄨ鐩?, '30鍒嗛挓鍝嶅簲'],
         url: '/pages/webview/webview?goto=qiye'
       }
     ]
@@ -44,7 +44,7 @@ Page({
 
   onLoad() {
     wx.setNavigationBarTitle({
-      title: '怡阳通讯'
+      title: '鎬￠槼閫氳'
     })
   },
 
