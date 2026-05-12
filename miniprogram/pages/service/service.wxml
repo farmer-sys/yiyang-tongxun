@@ -1,0 +1,38 @@
+<!-- pages/service/service.wxml -->
+<view class="page">
+  <view class="section">
+    <view class="section-title">
+      <text class="title-icon">📦</text>
+      <text>服务项目</text>
+    </view>
+    <view class="service-list">
+      <view class="service-card" wx:for="{{services}}" wx:key="id" bindtap="goDetail" data-url="{{item.url}}">
+        <view class="card-left">
+          <text class="card-icon">{{item.icon}}</text>
+        </view>
+        <view class="card-right">
+          <text class="card-name">{{item.name}}</text>
+          <text class="card-desc">{{item.desc}}</text>
+          <view class="card-tags">
+            <text class="mini-tag" wx:for="{{item.tags}}" wx:key="*this">{{item}}</text>
+          </view>
+        </view>
+        <text class="card-arrow">›</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">
+      <text class="title-icon">🏷️</text>
+      <text>合作品牌</text>
+    </view>
+    <view class="brand-grid">
+      <view class="brand-item" wx:for="{{brands}}" wx:key="id">
+        <text class="brand-name" style="color:{{item.color}}">{{item.name}}</text>
+        <text class="brand-desc">{{item.desc}}</text>
+      </view>
+    </view>
+    <button class="link-btn" bindtap="goProducts">查看产品型号参数 ›</button>
+  </view>
+</view>
