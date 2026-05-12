@@ -41,16 +41,9 @@ Page({
     })
   },
 
-  showService(e){
+  goServiceDetail(e){
     const id=e.currentTarget.dataset.id
-    const service=this.data.services.find(s=>s.id===id)
-    if(service){
-      this.setData({showServiceDetail:true,currentService:service})
-    }
-  },
-
-  hideServiceDetail(){
-    this.setData({showServiceDetail:false})
+    wx.navigateTo({url:"/pages/service-detail/service-detail?id="+id})
   },
 
   showCase(e){
