@@ -1,0 +1,66 @@
+<!-- pages/about/about.wxml -->
+<view class="page">
+  <view class="section">
+    <view class="about-header">
+      <view class="about-logo">
+        <svg viewBox="0 0 60 60" width="56" height="56">
+          <circle cx="30" cy="30" r="29" fill="#002d5a"/>
+          <circle cx="30" cy="30" r="27" fill="none" stroke="#f39c12" stroke-width="1.5" opacity="0.6"/>
+          <path d="M30,12 L22,30 L22,46" stroke="#f39c12" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+          <path d="M30,12 L38,30 L38,46" stroke="#f39c12" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+          <path d="M30,12 L30,46" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.6"/>
+          <rect x="22" y="50" width="16" height="2.5" rx="1.25" fill="#f39c12" opacity="0.6"/>
+        </svg>
+      </view>
+      <text class="about-name">怡阳通讯</text>
+      <text class="about-slogan">弱电智能化集成建设专家</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">
+      <text class="title-icon">🏢</text>
+      <text>公司简介</text>
+    </view>
+    <text class="about-text">
+      赣州经济技术开发区怡阳通讯服务店，专注弱电智能化集成建设。主营安防监控、网络布线、智能系统集成、弱电工程等业务，服务覆盖赣州及周边区域。
+    </text>
+  </view>
+
+  <view class="section">
+    <view class="section-title">
+      <text class="title-icon">📞</text>
+      <text>联系方式</text>
+    </view>
+    <view class="contact-item" bindtap="callPhone">
+      <text class="contact-icon">📞</text>
+      <view class="contact-info">
+        <text class="contact-label">电话</text>
+        <text class="contact-value">{{phone}}</text>
+      </view>
+    </view>
+    <view class="contact-item">
+      <text class="contact-icon">📍</text>
+      <view class="contact-info">
+        <text class="contact-label">地址</text>
+        <text class="contact-value">赣州经济技术开发区和信广场D栋</text>
+      </view>
+    </view>
+    <view class="contact-item">
+      <text class="contact-icon">📧</text>
+      <view class="contact-info">
+        <text class="contact-label">邮箱</text>
+        <text class="contact-value">531566849@qq.com</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="action-btns">
+    <button class="action-btn call-btn" bindtap="callPhone">📞 立即拨打</button>
+    <button class="action-btn booking-btn" bindtap="goBooking">📅 预约勘测</button>
+  </view>
+
+  <view class="footer">
+    <text class="footer-text">© 怡阳通讯  All Rights Reserved</text>
+  </view>
+</view>
