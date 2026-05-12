@@ -6,7 +6,7 @@
       <text>服务项目</text>
     </view>
     <view class="service-list">
-      <view class="service-card" wx:for="{{services}}" wx:key="id" bindtap="goDetail" data-url="{{item.url}}">
+      <view class="service-card" wx:for="{{services}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
         <view class="card-left">
           <text class="card-icon">{{item.icon}}</text>
         </view>
