@@ -25,6 +25,6 @@ Page({
   },
 
   goProducts() {
-    wx.navigateTo({ url: '/pages/webview/webview?goto=products' })
+    wx.navigateTo({ url: '/pages/products/products' })
   }
 })
