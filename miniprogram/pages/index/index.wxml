@@ -1,6 +1,6 @@
 <!-- pages/index/index.wxml -->
 <view class="page">
-  <!-- 顶部Logo区 -->
+  <!-- 椤堕儴Logo鍖?-->
   <view class="hero">
     <view class="logo-area">
       <view class="logo-icon">
@@ -13,29 +13,29 @@
           <rect x="22" y="50" width="16" height="2.5" rx="1.25" fill="#f39c12" opacity="0.6"/>
         </svg>
       </view>
-      <text class="logo-text">怡阳通讯</text>
+      <text class="logo-text">鎬￠槼閫氳</text>
     </view>
     <view class="hero-tags">
-      <text class="tag">安防监控</text>
-      <text class="tag">网络全光</text>
-      <text class="tag">客控声光</text>
+      <text class="tag">瀹夐槻鐩戞帶</text>
+      <text class="tag">缃戠粶鍏ㄥ厜</text>
+      <text class="tag">瀹㈡帶澹板厜</text>
     </view>
-    <text class="hero-sub">弱电工程 · 专业施工 · 品牌授权</text>
+    <text class="hero-sub">寮辩數宸ョ▼ 路 涓撲笟鏂藉伐 路 鍝佺墝鎺堟潈</text>
     <text class="hero-phone" bindtap="callPhone">{{phone}}</text>
     <view class="hero-btns">
-      <button class="btn-primary" bindtap="callPhone">📞 立即拨打</button>
-      <button class="btn-secondary" bindtap="goBooking">📅 预约勘测</button>
+      <button class="btn-primary" bindtap="callPhone">馃摓 绔嬪嵆鎷ㄦ墦</button>
+      <button class="btn-secondary" bindtap="goBooking">馃搮 棰勭害鍕樻祴</button>
     </view>
   </view>
 
-  <!-- 服务项目 -->
+  <!-- 鏈嶅姟椤圭洰 -->
   <view class="section">
     <view class="section-title">
-      <text class="title-icon">📦</text>
-      <text>服务项目</text>
+      <text class="title-icon">馃摝</text>
+      <text>鏈嶅姟椤圭洰</text>
     </view>
     <view class="service-grid">
-      <view class="service-item" wx:for="{{services}}" wx:key="id" bindtap="goService" data-url="{{item.url}}">
+      <view class="service-item" wx:for="{{services}}" wx:key="id" catchtap="showService" data-id="{{item.id}}">
         <text class="service-icon">{{item.icon}}</text>
         <text class="service-name">{{item.name}}</text>
         <text class="service-desc">{{item.desc}}</text>
@@ -43,13 +43,13 @@
     </view>
   </view>
 
-  <!-- 重点项目 -->
+  <!-- 閲嶇偣椤圭洰 -->
   <view class="section">
     <view class="section-title">
-      <text class="title-icon">🏆</text>
-      <text>重点项目</text>
+      <text class="title-icon">馃弳</text>
+      <text>閲嶇偣椤圭洰</text>
     </view>
-    <view class="case-card" wx:for="{{cases}}" wx:key="id" bindtap="goWebview" data-url="{{item.url}}">
+    <view class="case-card" wx:for="{{cases}}" wx:key="id" catchtap="showCase" data-id="{{item.id}}">
       <view class="case-tag {{item.tagClass}}">{{item.tag}}</view>
       <view class="case-title">{{item.title}}</view>
       <view class="case-desc">{{item.desc}}</view>
@@ -59,10 +59,23 @@
     </view>
   </view>
 
-  <!-- 底部联系方式 -->
+  <!-- 搴曢儴鑱旂郴鏂瑰紡 -->
   <view class="footer">
-    <text class="footer-phone" bindtap="callPhone">📞 {{phone}}</text>
-    <text class="footer-addr">📍 赣州经济技术开发区和信广场D栋</text>
-    <text class="footer-copy">© 怡阳通讯  All Rights Reserved</text>
+    <text class="footer-phone" bindtap="callPhone">馃摓 {{phone}}</text>
+    <text class="footer-addr">馃搷 璧ｅ窞缁忔祹鎶€鏈紑鍙戝尯鍜屼俊骞垮満D鏍?/text>
+    <text class="footer-copy">漏 鎬￠槼閫氳  All Rights Reserved</text>
+  </view>
+
+  <!-- 鏈嶅姟璇︽儏寮圭獥 -->
+  <view class="modal-overlay {{showServiceDetail ? 'active' : ''}}" bindtap="hideServiceDetail">
+    <view class="modal-box" catchtap="noop">
+      <text class="modal-icon">{{currentService.icon}}</text>
+      <text class="modal-title">{{currentService.name}}</text>
+      <text class="modal-desc">{{currentService.detail}}</text>
+      <view class="modal-actions">
+        <button class="modal-btn" bindtap="callPhone">馃摓 鍜ㄨ鎶ヤ环</button>
+        <button class="modal-btn modal-btn-secondary" bindtap="hideServiceDetail">鍏抽棴</button>
+      </view>
+    </view>
   </view>
 </view>
