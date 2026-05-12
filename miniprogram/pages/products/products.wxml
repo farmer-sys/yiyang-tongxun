@@ -1,31 +1,52 @@
+<!-- pages/products/products.wxml -->
 <view class="page">
+  <!-- 合作品牌 -->
   <view class="section">
     <view class="section-title">
       <text class="title-icon">🏷️</text>
       <text>合作品牌</text>
     </view>
-    <view class="brand-grid">
-      <view class="brand-item" wx:for="{{brands}}" wx:key="id">
-        <text class="brand-name" style="color:{{item.color}}">{{item.name}}</text>
-        <text class="brand-desc">{{item.desc}}</text>
-      </view>
+    <view class="brand-scroll">
+      <text class="brand-chip" wx:for="{{brands}}" wx:key="id" style="border-color:{{item.color}};color:{{item.color}}">
+        {{item.name}}
+      </text>
     </view>
   </view>
 
-  <view class="brand-section" wx:for="{{products}}" wx:key="id">
-    <view class="brand-header">
-      <text class="brand-title" style="color:{{item.color}}">{{item.brand}}</text>
-      <text class="brand-sub">{{item.sub}}</text>
+  <!-- 产品分类 -->
+  <view class="category-section" wx:for="{{categories}}" wx:key="id" wx:for-index="ci">
+    <view class="category-header">
+      <text class="category-icon">{{item.icon}}</text>
+      <text class="category-name">{{item.name}}</text>
+      <view class="brand-chips">
+        <text class="chip" wx:for="{{item.brands}}" wx:key="*this">{{item}}</text>
+      </view>
     </view>
-    <view class="product-card" wx:for="{{item.list}}" wx:for-item="p" wx:key="name">
-      <view class="product-icon">{{p.icon}}</view>
-      <view class="product-info">
-        <text class="product-name">{{p.name}}</text>
-        <text class="product-model">{{p.model}}</text>
-        <text class="product-desc">{{p.desc}}</text>
-        <view class="product-tags">
-          <text class="mini-tag" wx:for="{{p.tags}}" wx:key="*this">{{item}}</text>
+
+    <view class="spec-card" wx:for="{{item.items}}" wx:for-item="spec" wx:key="type" wx:for-index="si">
+      <view class="spec-header">
+        <text class="spec-type">{{spec.type}}</text>
+        <view class="spec-specs">
+          <text class="spec-tag" wx:for="{{spec.specs}}" wx:key="*this">{{item}}</text>
         </view>
+      </view>
+      <text class="spec-desc" wx:if="{{spec.feature}}">{{spec.feature}}</text>
+      <text class="spec-power" wx:if="{{spec.power}}">供电方式：{{spec.power.join('、')}}</text>
+    </view>
+  </view>
+
+  <!-- 其他品牌产品 -->
+  <view class="section" wx:if="{{others}}">
+    <view class="section-title">
+      <text class="title-icon">🔧</text>
+      <text>其他配套产品</text>
+    </view>
+    <view class="other-item" wx:for="{{others}}" wx:key="id">
+      <text class="other-icon">{{item.icon}}</text>
+      <view class="other-info">
+        <text class="other-name">{{item.name}}</text>
+        <text class="other-brand">品牌：{{item.brand}}</text>
+        <text class="other-desc">{{item.desc}}</text>
       </view>
     </view>
   </view>
