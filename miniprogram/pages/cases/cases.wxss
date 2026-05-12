@@ -1,0 +1,45 @@
+/* pages/cases/cases.wxss */
+.page {
+  padding-bottom: 20px;
+  background: #f0f4f8;
+  min-height: 100vh;
+}
+.section {
+  background: #fff;
+  border-radius: 16px;
+  margin: 10px 16px;
+  padding: 20px 16px;
+}
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.title-icon { font-size: 18px; }
+
+.case-card {
+  background: linear-gradient(135deg, #002d5a, #004b99);
+  color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+.case-card:last-child { margin-bottom: 0; }
+.case-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.tag-orange { background: #fef3e0; color: #e67e22; }
+.tag-blue { background: #e3edf7; color: #004b99; }
+.case-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.case-desc { font-size: 12px; opacity: .85; line-height: 1.7; }
+.case-stats { display: flex; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
+.stat-item { font-size: 11px; opacity: .9; color: #f39c12; }
