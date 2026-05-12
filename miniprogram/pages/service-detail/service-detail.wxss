@@ -1,0 +1,9 @@
+.page{padding-bottom:20px;background:#f0f4f8;min-height:100vh}
+.detail-header{text-align:center;padding:40px 20px 20px;background:linear-gradient(180deg,#003366,#004b99);color:#fff}
+.detail-icon{font-size:60px;display:block;margin-bottom:10px}
+.detail-name{font-size:22px;font-weight:700}
+.section{background:#fff;border-radius:16px;margin:10px 16px;padding:20px 16px}
+.detail-text{font-size:14px;color:#555;line-height:2.2;white-space:pre-line;display:block}
+.action-area{margin:16px}
+.action-btn{width:100%;padding:14px 0;border-radius:12px;font-size:16px;font-weight:700;margin:0}
+.call-btn{background:#27ae60;color:#fff}
