@@ -1,0 +1,12 @@
+<view class="page">
+  <view class="detail-header">
+    <text class="detail-icon">{{service.icon}}</text>
+    <text class="detail-name">{{service.name}}</text>
+  </view>
+  <view class="section">
+    <text class="detail-text">{{service.detail}}</text>
+  </view>
+  <view class="action-area">
+    <button class="action-btn call-btn" bindtap="callPhone">📞 咨询报价：{{phone}}</button>
+  </view>
+</view>
