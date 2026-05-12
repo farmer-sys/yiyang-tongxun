@@ -1,0 +1,75 @@
+/* pages/service/service.wxss */
+.page {
+  padding-bottom: 20px;
+  background: #f0f4f8;
+  min-height: 100vh;
+}
+.section {
+  background: #fff;
+  border-radius: 16px;
+  margin: 10px 16px;
+  padding: 20px 16px;
+}
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.title-icon { font-size: 18px; }
+
+.service-card {
+  display: flex;
+  align-items: center;
+  background: #f2f6fc;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.card-left {
+  width: 44px;
+  height: 44px;
+  background: #e8f2ff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+.card-icon { font-size: 22px; }
+.card-right { flex: 1; }
+.card-name { font-size: 15px; font-weight: 600; color: #1a2332; display: block; }
+.card-desc { font-size: 12px; color: #666; margin-top: 2px; display: block; line-height: 1.5; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+.mini-tag { background: #e8f2ff; color: #004b99; padding: 2px 8px; border-radius: 8px; font-size: 10px; }
+.card-arrow { font-size: 22px; color: #ccc; margin-left: 8px; }
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.brand-item {
+  text-align: center;
+  padding: 16px 8px;
+  background: #f2f6fc;
+  border-radius: 12px;
+}
+.brand-name { font-size: 16px; font-weight: 800; display: block; }
+.brand-desc { font-size: 11px; color: #888; margin-top: 4px; display: block; }
+
+.link-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: transparent;
+  color: #004b99;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid #004b99;
+  border-radius: 10px;
+  padding: 10px 0;
+}
