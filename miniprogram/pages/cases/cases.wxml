@@ -1,0 +1,17 @@
+<!-- pages/cases/cases.wxml -->
+<view class="page">
+  <view class="section">
+    <view class="section-title">
+      <text class="title-icon">🏆</text>
+      <text>重点项目</text>
+    </view>
+    <view class="case-card" wx:for="{{cases}}" wx:key="id" bindtap="goDetail" data-url="{{item.url}}">
+      <view class="case-tag {{item.tagClass}}">{{item.tag}}</view>
+      <view class="case-title">{{item.title}}</view>
+      <view class="case-desc">{{item.detail}}</view>
+      <view class="case-stats">
+        <text wx:for="{{item.stats}}" wx:key="*this" class="stat-item">✓ {{item}}</text>
+      </view>
+    </view>
+  </view>
+</view>
