@@ -1,0 +1,44 @@
+Page({
+  data: {
+    brands: [
+      {id:1,name:"海康威视",desc:"监控·门禁·消防",color:"#0055aa"},
+      {id:2,name:"大华",desc:"监控·停车·报警",color:"#e74c3c"},
+      {id:3,name:"锐捷",desc:"网络·AP·交换机",color:"#e67e22"},
+      {id:4,name:"华为",desc:"路由·FTTR·智能家居",color:"#cf0a2c"}
+    ],
+    products: [
+      {
+        id:1,brand:"海康威视",sub:"Hikvision",color:"#0055aa",
+        list:[
+          {icon:"📹",name:"红外网络摄像机",model:"DS-2CD3T系列",desc:"300万/500万像素，红外夜视，POE供电",tags:["红外夜视","POE","H.265"]},
+          {icon:"💾",name:"NVR硬盘录像机",model:"DS-7600系列",desc:"4/8/16路，H.265编码，支持人脸检测",tags:["H.265","人脸检测","远程访问"]},
+          {icon:"🔒",name:"人脸门禁一体机",model:"DS-K1T系列",desc:"人脸识别+IC卡+密码，支持口罩检测",tags:["人脸识别","口罩检测","测温"]},
+          {icon:"🔥",name:"智慧烟感",model:"NP-F系列",desc:"NB-IoT联网，火灾预警，手机APP推送",tags:["NB-IoT","APP推送","低功耗"]}
+        ]
+      },
+      {
+        id:2,brand:"大华",sub:"Dahua",color:"#e74c3c",
+        list:[
+          {icon:"📹",name:"智能球型摄像机",model:"SD系列",desc:"200万/400万，20倍变焦，智能跟踪",tags:["智能跟踪","变焦","云台"]},
+          {icon:"🚗",name:"车牌识别一体机",model:"DH系列",desc:"99%识别率，支持新能源车牌",tags:["车牌识别","新能源","99%"]},
+          {icon:"🚧",name:"智能道闸",model:"DH-DZ系列",desc:"快速起落，防砸车，支持无人值守",tags:["快速道闸","防砸","无人值守"]}
+        ]
+      },
+      {
+        id:3,brand:"锐捷",sub:"Ruijie",color:"#e67e22",
+        list:[
+          {icon:"📶",name:"无线AP",model:"RG-AP720系列",desc:"WiFi6，千兆接入，支持无缝漫游",tags:["WiFi6","无缝漫游","千兆"]},
+          {icon:"🔌",name:"POE交换机",model:"RG-S2900系列",desc:"8/24/48口，POE+/POE++供电",tags:["POE++","网管","千兆上联"]}
+        ]
+      },
+      {
+        id:4,brand:"华为",sub:"Huawei",color:"#cf0a2c",
+        list:[
+          {icon:"📶",name:"WiFi6路由器",model:"华为AX3系列",desc:"3000Mbps，WiFi6+，支持Mesh组网",tags:["WiFi6+","Mesh","3000M"]},
+          {icon:"🖥️",name:"汇聚交换机",model:"S5720系列",desc:"24/48口千兆，4个万兆上行",tags:["千兆","万兆上行","网管型"]},
+          {icon:"🏠",name:"智能家居面板",model:"华为智选",desc:"灯光/窗帘/空调触控面板，语音联动",tags:["触控面板","语音联动","智能联动"]}
+        ]
+      }
+    ]
+  }
+})
